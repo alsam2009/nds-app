@@ -15,8 +15,9 @@ function App() {
           href="https://t.me/c/1831583082/189"
           target="_blank"
           rel="noopener noreferrer"
-        ><br />
-          see us on Telegram
+        >
+          <br />
+          see us on Telegram Vasiliy
         </a>
       </header>
     </div>
