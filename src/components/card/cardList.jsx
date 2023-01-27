@@ -29,7 +29,7 @@ const CardList = () => {
   useEffect(() => {
     if (fetching) {
       axios
-        .get(`http://localhost:3000/data?_page=${currentPage}&_limit=5`)
+        .get(`http://localhost:3000/data?_page=${currentPage}&_limit=8`)
         .then((res) => {
           setData([...data, ...res.data]);
           setCurrentPage((prevState) => prevState + 1);
