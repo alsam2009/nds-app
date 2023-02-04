@@ -8,7 +8,6 @@ const CardList = () => {
   const [fetching, setFetching] = useState(true);
   const [totalCount, setTotalCount] = useState(0);
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   const scrollHandler = (e) => {
     if (
       e.target.documentElement.scrollHeight -
@@ -19,6 +18,7 @@ const CardList = () => {
       setFetching(true);
     }
   };
+
   useEffect(() => {
     document.addEventListener("scroll", scrollHandler);
 
@@ -30,7 +30,7 @@ const CardList = () => {
   useEffect(() => {
     if (fetching) {
       axios
-        .get(`http://localhost:3000/data?_page=${currentPage}&_limit=16`)
+        .get(`http://localhost:3000/data?_page=${currentPage}&_limit=8`)
         .then((res) => {
           setData([...data, ...res.data]);
           setCurrentPage((prevState) => prevState + 1);
@@ -38,7 +38,7 @@ const CardList = () => {
         })
         .finally(() => setFetching(false));
     }
-  }, [currentPage, data, fetching]);
+  }, [fetching]);
   return (
     <>
       <CardItem data={data} />
