@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>News Delivery System Template</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+      <!-- Additional info component -->
+    <div class="flex justify-between bg-gray-900 w-full h-8 px-4 items-center additional-info">
+      <label class="w-9 relative inline-flex cursor-pointer">
+          <input type="checkbox" value="" class="sr-only peer" checked>
+          <div class="w-9 h-5 bg-gray-200 rounded-full items-center peer peer-focus:ring-green-300 dark:peer-focus:ring-green-800 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-green-600">
+          </div>
+      </label>
+      <div class="w-full text-center text-white">
+        <span class="font-extrabold text-xl tracking-widest cursor-pointer bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500">ВСЕ ПРО ДРОНЫ</span>
+      </div>
+      <div class="w-10"></div>
+    </div>
+    <!-- Menu component -->
+    <nav class="sticky top-0 bg-green-600">
+      <div class="flex w-auto items-center mx-8 justify-between">
+        <div class="flex text-md font-bold text-white">
+          <a
+            href="#"
+            class="block hover:-gray-300 px-4 py-2 font-normal hover:bg-gray-900 hover:transition mr-2"
+          >
+            Важное
+          </a>
+          <a
+            href="#"
+            class="block hover:-gray-300 px-4 py-2 font-normal hover:bg-gray-900 mr-2"
+          >
+            Новинки
+          </a>
+          <a
+            href="#"
+            class="block hover:-gray-300 px-4 py-2 font-normal hover:bg-gray-900 mr-2"
+          >
+            Обзоры
+          </a>
+          <a
+            href="#"
+            class="block hover:-gray-300 px-4 py-2 font-normal hover:bg-gray-900 mr-2"
+          >
+            Мероприятия
+          </a>
+          <a
+            href="#"
+            class="block hover:-gray-300 px-4 py-2 font-normal hover:bg-gray-900 mr-2"
+          >
+            Интересно
+          </a>
+        </div>
+
+        <!-- Search component -->
+        <div class="flex search" >
+          <input
+            class="bg-slate-200 h-6 mr-2 pl-2 text-sm rounded font-search  focus:outline-none focus:bg-white"
+            type="search"
+            name="search"
+            placeholder="Найти"
+          />
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 text-white cursor-pointer">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+          </svg>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Основная секция -->
+    <main class="pt-8">
+      <!-- Divider component -->
+      <div class="w-auto h-6 mx-8 mb-5 border-b-2 border-red-500 items-center text-white  divider">
+        <span class="bg-red-500 px-2 py-0.5">РАЗДЕЛИТЕЛЬ</span>
+      </div>
+      <section class="flex px-8 mb-8 main_block">
+        <!-- Important news component -->
+        <div class="w-8/12 pr-10 overflow-x-auto important_news">
+          <!-- Important news image component -->
+          <div class="max-w-[855px] overflow-hidden">
+            <img src="./img/important_big.png" class ="mb-5" alt="image">
+          </div>
+          <!-- Important news cards component -->
+          <div class="flex max-w-[855px] justify-between overflow-x-auto">
+            <img src="./img/important_small.png" class ="max-w-full h-auto" alt="">
+            <img src="./img/important_small.png" class ="max-w-full h-auto" alt="">
+            <img src="./img/important_small.png" class ="max-w-full h-auto" alt="">
+            <img src="./img/important_small.png" alt="max-w-full h-auto">
+          </div>
+        </div>
+
+        <div class="w-4/12 popular_news">
+          <div class="flex justify-center items-center min-h-[192px]  bg-black text-white text-3xl mb-4">РЕКЛАМА
+          </div>
+          <div class="">
+            <img src="./img/hot_news.png" class="min-w-full" alt="hot_news">
+          </div>
+        </div>
+      </section>
+      <div class="w-auto h-6 mx-8 mb-5 border-b-2 border-green-600 items-center text-white  divider">
+        <span class="bg-green-600 px-2 py-0.5">РАЗДЕЛИТЕЛЬ</span>
+      </div>
+
+      <section class="flex px-8 justify-between flex-wrap" >
+        <img src="./img/news_card.png" class="mb-5" alt="">
+        <img src="./img/news_card.png" class="mb-5" alt="">
+        <img src="./img/news_card.png" class="mb-5" alt="">
+        <img src="./img/news_card.png" class="mb-5" alt="">
+        <img src="./img/news_card.png" class="mb-5" alt="">
+        <img src="./img/news_card.png" class="mb-5" alt="">
+        <img src="./img/news_card.png" class="mb-5" alt="">
+        <img src="./img/news_card.png" class="mb-5" alt="">
+      </section>
+    </main>
+  </body>
+</html>
