@@ -2,10 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
   @layer base {
     html {
-      font-family: montserrat, sans-serif;
+      font-family: fira sans, sans-serif;
     }
   }
-}
