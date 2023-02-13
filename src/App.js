@@ -1,16 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";
-//import Search from "./components/search/search";
-import NewSearch from "./components/search/newSearch";
-import CardList from "./components/card/cardList";
+import DataContex from "./components/dataContex";
+//import CardList from "./components/card/cardList";
+import Main from "./components/main";
+import Menu from "./components/menu/menu";
 
 function App() {
+  const [globalData, setGlobalData] = useState(null);
+
   return (
-    <div className="container mx-auto">
-      {/* <Search /> */}
-      <NewSearch />
-      <CardList />
-    </div>
+    <>
+      <DataContex.Provider value={{ globalData, setGlobalData }}>
+        <Menu />
+        <Main />
+      </DataContex.Provider>
+    </>
   );
 }
 

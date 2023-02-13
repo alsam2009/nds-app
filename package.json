@@ -8,6 +8,7 @@
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.2.5",
     "concurrently": "^7.6.0",
+    "intersection-observer-polyfill": "^0.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
@@ -19,7 +20,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "start-all": "concurrently \"npm run start\" \"json-server --watch drone_articles_base.json\"" 
+    "start-all": "concurrently \"npm run start\" \"json-server --watch drone_articles_base.json\""
   },
   "eslintConfig": {
     "extends": [
