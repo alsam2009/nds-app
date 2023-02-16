@@ -62,16 +62,18 @@ const CardList = () => {
 
   return (
     <>
-      <section className="flex px-8 justify-between flex-wrap">
-        {globalData !== null ? (
-          <div>
-            <p>Результат поиска:</p>
-            <Card data={globalData} />
-          </div>
-        ) : (
-          <Card data={data} />
-        )}
-      </section>
+      {
+        <section className="flex px-8 justify-between flex-wrap">
+          {globalData !== null ? (
+            <div>
+              <p>Результат поиска:</p>
+              <Card data={globalData} />
+            </div>
+          ) : (
+            <Card data={data} />
+          )}
+        </section>
+      }
     </>
   );
 };

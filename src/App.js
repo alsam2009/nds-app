@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import DataContex from "./components/dataContex";
 //import CardList from "./components/card/cardList";
@@ -12,7 +13,10 @@ function App() {
     <>
       <DataContex.Provider value={{ globalData, setGlobalData }}>
         <Menu />
-        <Main />
+        <Routes>
+          <Route path="/" exact element={<Main />} />
+        </Routes>
+        {/* <Main /> */}
       </DataContex.Provider>
     </>
   );

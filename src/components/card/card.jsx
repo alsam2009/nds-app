@@ -14,23 +14,17 @@ const Card = ({ data }) => {
                 <div className="h-[416px] w-[310px] max-w-xs bg-white px-0 shadow-md mr-3 mt-3 flex flex-col">
                   <div className="relative">
                     <div
-                      className={`absolute top-0 left-[20px] flex items-center `}
+                      className={
+                        `absolute top-0 left-[20px] flex items-center p-1.5 ` +
+                        getColorTag(item.tag_article)
+                      }
                     >
-                      <div
-                        className={
-                          "p-1.5 " +
-                          getColorTag(item.tag_article).replace(
-                            getColorTag(item.tag_article),
-                            getColorTag(item.tag_article).slice(0, -3) + 600
-                          )
-                        }
-                      >
+                      <div className="pr-1.5">
                         <img src={tagIcon} alt="tag-icon" />
                       </div>
                       <div
                         className={
-                          `p-1.5 text-white text-xs ` +
-                          getColorTag(item.tag_article)
+                          ` text-white text-xs ` + getColorTag(item.tag_article)
                         }
                       >
                         {item.tag_article.toUpperCase()}

@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 import DataContex from "../dataContex";
 
 const Search = () => {
-  const { globalData, setGlobalData } = useContext(DataContex);
+  const { setGlobalData } = useContext(DataContex);
   const [query, setQuery] = useState("");
 
   const handleSearch = async () => {
@@ -17,7 +17,6 @@ const Search = () => {
   const handleChange = (e) => {
     setQuery(e.target.value);
     if (query.length < 1) setGlobalData(null);
-    console.log(globalData);
   };
 
   return (
