@@ -3,6 +3,7 @@ import DataContex from "../dataContex";
 
 const Search = () => {
   const { setGlobalData } = useContext(DataContex);
+  const [btnDisable, setBtnDisable] = useState(true);
   const [query, setQuery] = useState("");
 
   const handleSearch = async () => {
@@ -15,8 +16,11 @@ const Search = () => {
   };
 
   const handleChange = (e) => {
+    setBtnDisable(false);
     setQuery(e.target.value);
-    if (query.length < 1) setGlobalData(null);
+    if (query.length < 1) {
+      setGlobalData(null);
+    }
   };
 
   return (
@@ -30,7 +34,7 @@ const Search = () => {
           value={query}
           onChange={handleChange}
         />
-        <button onClick={handleSearch}>
+        <button onClick={handleSearch} disabled={btnDisable}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
