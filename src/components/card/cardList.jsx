@@ -1,8 +1,10 @@
-import React, { useCallback, useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
+
 import DataContex from "../dataContex";
 import axios from "axios";
 import Card from "./card";
 import LoaderContent from "../loaderContent/loaderContent";
+import { scrollHandler } from "../tools";
 
 const CardList = () => {
   const { globalData } = useContext(DataContex);
@@ -12,27 +14,17 @@ const CardList = () => {
   const [totalCount, setTotalCount] = useState(0);
   const [loading, setLoading] = useState(true);
 
-  const scrollHandler = useCallback(
-    (e) => {
-      if (
-        e.target.documentElement.scrollHeight -
-          (e.target.documentElement.scrollTop + window.innerHeight) <
-          100 &&
-        data.length < totalCount
-      ) {
-        setFetching(true);
-      }
-    },
-    [data.length, totalCount]
-  );
-
   useEffect(() => {
-    document.addEventListener("scroll", scrollHandler);
+    document.addEventListener("scroll", (e) =>
+      scrollHandler(e, data, totalCount, setFetching)
+    );
 
     return function () {
-      document.removeEventListener("scroll", scrollHandler);
+      document.removeEventListener("scroll", (e) =>
+        scrollHandler(e, data, totalCount, setFetching)
+      );
     };
-  }, [scrollHandler, totalCount]);
+  }, [totalCount, data]);
 
   useEffect(() => {
     if (fetching) {

@@ -29,3 +29,16 @@ export const getColorTag = (val) => {
       return "bg-slate-400";
   }
 };
+
+//scrollHandler
+
+export const scrollHandler = (e, data, total, state) => {
+  if (
+    e.target.documentElement.scrollHeight -
+      (e.target.documentElement.scrollTop + window.innerHeight) <
+      100 &&
+    data.length < total
+  ) {
+    state(true);
+  }
+};
