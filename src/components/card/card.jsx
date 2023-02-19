@@ -11,7 +11,7 @@ const Card = ({ data }) => {
           data.map((item, i) => (
             <li key={i}>
               <a href={item.article_url} target="_blank" rel="noreferrer">
-                <div className="h-[416px] w-[310px] max-w-xs bg-white px-0 shadow-md mr-3 mt-3 flex flex-col">
+                <div className="dark:bg-slate-500 h-[416px] w-[310px] max-w-xs bg-white px-0 shadow-md mr-3 mt-3 flex flex-col">
                   <div className="relative">
                     <div
                       className={
@@ -37,7 +37,7 @@ const Card = ({ data }) => {
                     />
                   </div>
                   <div className="grow p-[20px]">
-                    <h2 className="underline text-lg font-medium">
+                    <h2 className="underline text-lg font-medium dark:text-white">
                       {item.title.length > 55
                         ? item.title.substring(0, 55) + "..."
                         : item.title}
@@ -45,7 +45,7 @@ const Card = ({ data }) => {
                   </div>
                   <div className="mt-auto p-3">
                     <div className="flex justify-between items-center">
-                      <p className="underline text-slate-400 text-xs">
+                      <p className="dark:text-white underline text-slate-400 text-xs">
                         {formatDate(item.publication_date)}
                       </p>
                     </div>

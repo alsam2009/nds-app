@@ -5,7 +5,7 @@ import Search from "../search/search";
 
 const Menu = () => {
   return (
-    <nav className="sticky top-0 bg-green-600 z-10">
+    <nav className="dark:bg-slate-600 sticky top-0 bg-green-600 z-10">
       <div className="flex w-auto items-center mx-8 justify-between">
         <div className="flex text-md font-bold text-white">
           <a
