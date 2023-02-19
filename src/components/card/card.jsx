@@ -1,7 +1,7 @@
 import React from "react";
 import tagIcon from "../../images/tag-icon.svg";
 
-import { formatDate, getColorTag } from "../tools";
+import { formatDate, getColorTag, truncateSentence } from "../tools";
 
 const Card = ({ data }) => {
   return (
@@ -38,9 +38,7 @@ const Card = ({ data }) => {
                   </div>
                   <div className="grow p-[20px]">
                     <h2 className="underline text-lg font-medium dark:text-white">
-                      {item.title.length > 55
-                        ? item.title.substring(0, 55) + "..."
-                        : item.title}
+                      {truncateSentence(item.title)}
                     </h2>
                   </div>
                   <div className="mt-auto p-3">

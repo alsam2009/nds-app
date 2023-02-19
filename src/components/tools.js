@@ -42,3 +42,15 @@ export const scrollHandler = (e, data, total, state) => {
     state(true);
   }
 };
+
+export const truncateSentence = (sentence) => {
+  if (sentence.length > 55) {
+    sentence = sentence.substring(0, 55);
+    sentence = sentence.substring(
+      0,
+      Math.min(sentence.length, sentence.lastIndexOf(" "))
+    );
+    sentence = sentence.trim() + "...";
+  }
+  return sentence;
+};
