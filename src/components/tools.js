@@ -1,11 +1,11 @@
-//formate Date
+//formate Date форматирование даты
 export const formatDate = (dateString) => {
   const date = new Date(dateString);
   const options = { year: "numeric", month: "long", day: "numeric" };
   return date.toLocaleDateString("ru-RU", options);
 };
 
-//colorsTags
+//colorsTags вывод определенного класса для цвета
 export const getColorTag = (val) => {
   const tags = ["важное", "новинки", "обзоры", "мероприятия", "интересно"];
 
@@ -30,7 +30,7 @@ export const getColorTag = (val) => {
   }
 };
 
-//scrollHandler
+//scrollHandler функция скролла
 
 export const scrollHandler = (e, data, total, state) => {
   if (
@@ -42,6 +42,7 @@ export const scrollHandler = (e, data, total, state) => {
     state(true);
   }
 };
+//функция обрезки предложения до целого слова
 
 export const truncateSentence = (sentence) => {
   if (sentence.length > 55) {

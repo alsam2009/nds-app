@@ -1,5 +1,4 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 
 const AdditionalBar = () => {
   const [theme, setTheme] = useState(true);
