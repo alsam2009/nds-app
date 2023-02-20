@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import tagIcon from "../../images/tag-icon.svg";
 
 import { formatDate, getColorTag, truncateSentence } from "../tools";
@@ -10,7 +11,7 @@ const Card = ({ data }) => {
         {data &&
           data.map((item, i) => (
             <li key={i}>
-              <a href={item.article_url} target="_blank" rel="noreferrer">
+              <Link to={`/card/${item.id}`}>
                 <div className="dark:bg-slate-500 h-[416px] w-[310px] max-w-xs bg-white px-0 shadow-md mr-3 mt-3 flex flex-col">
                   <div className="relative">
                     <div
@@ -49,7 +50,7 @@ const Card = ({ data }) => {
                     </div>
                   </div>
                 </div>
-              </a>
+              </Link>
             </li>
           ))}
       </ul>
