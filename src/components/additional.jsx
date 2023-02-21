@@ -2,11 +2,29 @@ import React from "react";
 import {useState} from "react";
 
 const AdditionalBar = (props) => {
-    const [theme, setTheme] = useState(true)
+    const [theme, setTheme] = useState(false)
     const element = document.documentElement
+    const darkQuery = window.matchMedia(('prefers-color=scheme: dark'))
+    function onWindowMatch () {
+    if(localStorage.theme === 'dark'|| 
+        (!('theme' in localStorage) && darkQuery.matches)
+     ) {
+        element.classList.add('dark')
+    }else {
+        element.classList.remove('dark')
+    }
+    }
+    onWindowMatch()
     const handleThemeSwitch = () => {
         setTheme(prevDarkMode=>!prevDarkMode)
-        theme===true?element.classList.add('dark'):element.classList.remove('dark')
+        // theme===true?element.classList.add('dark'):element.classList.remove('dark')
+        if(theme===true){
+            localStorage.setItem('theme','dark')
+            element.classList.add('dark')
+        }else {
+            localStorage.setItem('theme', 'light')
+            element.classList.remove('dark')
+        }
     }
     return (
     <div className="flex dark:bg-violet-200 justify-between bg-gray-900 w-full h-8 px-4 items-center additional-info">
@@ -21,5 +39,6 @@ const AdditionalBar = (props) => {
         <div className="w-10"></div>
     </div> )
 }
+console.log(AdditionalBar.theme)
 
 export default AdditionalBar
