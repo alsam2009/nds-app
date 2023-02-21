@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import tagIcon from "../../images/tag-icon.svg";
 
-import { formatDate, getColorTag, truncateSentence } from "../tools";
+import { formatDate, getColorTag, truncateSentence } from "../tools/tools";
 
 const Card = ({ data }) => {
   return (

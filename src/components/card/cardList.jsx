@@ -4,11 +4,10 @@ import DataContex from "../dataContex";
 import axios from "axios";
 import Card from "./card";
 import LoaderContent from "../loaderContent/loaderContent";
-import { scrollHandler } from "../tools";
+import { scrollHandler } from "../tools/tools";
 
 const CardList = () => {
-  const { globalData } = useContext(DataContex);
-  const [data, setData] = useState([]);
+  const { globalData, setGlobalData } = useContext(DataContex);
   const [currentPage, setCurrentPage] = useState(1);
   const [fetching, setFetching] = useState(true);
   const [totalCount, setTotalCount] = useState(0);
@@ -16,29 +15,27 @@ const CardList = () => {
 
   useEffect(() => {
     document.addEventListener("scroll", (e) =>
-      scrollHandler(e, data, totalCount, setFetching)
+      scrollHandler(e, globalData, totalCount, setFetching)
     );
 
     return function () {
       document.removeEventListener("scroll", (e) =>
-        scrollHandler(e, data, totalCount, setFetching)
+        scrollHandler(e, globalData, totalCount, setFetching)
       );
     };
-  }, [totalCount, data]);
+  }, [totalCount, globalData]);
 
-  useEffect(() => {
-    if (fetching) {
-      axios
-        .get(`http://localhost:3000/data?_page=${currentPage}&_limit=10`)
-        .then((res) => {
-          setData([...data, ...res.data]);
-          setLoading(false);
-          setCurrentPage((prevState) => prevState + 1);
-          setTotalCount(res.headers["x-total-count"]);
-        })
-        .finally(() => setFetching(false));
-    }
-  }, [fetching, currentPage, data]);
+  if (fetching) {
+    axios
+      .get(`http://localhost:3000/data?_page=${currentPage}&_limit=10`)
+      .then((res) => {
+        setGlobalData([...globalData, ...res.data]);
+        setLoading(false);
+        setCurrentPage((prevState) => prevState + 1);
+        setTotalCount(res.headers["x-total-count"]);
+      })
+      .finally(() => setFetching(false));
+  }
 
   if (loading) {
     return (
@@ -56,14 +53,7 @@ const CardList = () => {
     <>
       {
         <section className="flex px-8 justify-between flex-wrap">
-          {globalData !== null ? (
-            <div>
-              <p>Результат поиска:</p>
-              <Card data={globalData} />
-            </div>
-          ) : (
-            <Card data={data} />
-          )}
+          <Card data={globalData} />
         </section>
       }
     </>

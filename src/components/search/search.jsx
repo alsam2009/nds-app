@@ -1,19 +1,11 @@
 import React, { useContext, useState } from "react";
+import { Link } from "react-router-dom";
 import DataContex from "../dataContex";
 
 const Search = () => {
   const { setGlobalData } = useContext(DataContex);
   const [btnDisable, setBtnDisable] = useState(true);
   const [query, setQuery] = useState("");
-
-  const handleSearch = async () => {
-    const response = await fetch(
-      `http://localhost:3000/data?q=${encodeURIComponent(query)}`
-    );
-    const data = await response.json();
-
-    setGlobalData(data);
-  };
 
   const handleChange = (e) => {
     setBtnDisable(false);
@@ -34,7 +26,7 @@ const Search = () => {
           value={query}
           onChange={handleChange}
         />
-        <button onClick={handleSearch} disabled={btnDisable}>
+        <Link to={`/search?search=${query}`} disabled={btnDisable}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -49,7 +41,7 @@ const Search = () => {
               d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
             />
           </svg>
-        </button>
+        </Link>
       </div>
     </>
   );

@@ -1,0 +1,23 @@
+import React from "react";
+import { useSearchParams } from "react-router-dom";
+import useSWR from "swr";
+
+import Card from "../card/card";
+import { fetcher } from "../tools/fetcher";
+
+const SearchPage = () => {
+  const [searchParams] = useSearchParams();
+  const searchQuery = searchParams.get("search") || "";
+
+  const { data, error, isLoading } = useSWR(
+    `http://localhost:3000/data?q=${encodeURIComponent(searchQuery)}`,
+    fetcher
+  );
+
+  if (error) return <div>Ошибка загрузки</div>;
+  if (isLoading) return <div>Загрузка...</div>;
+
+  return data && <Card data={data.data} />;
+};
+
+export default SearchPage;
