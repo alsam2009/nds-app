@@ -17,7 +17,7 @@ const Search = () => {
 
   return (
     <>
-      <div className="dark:bg-black flex search bg-lime-600">
+      <div className="dark:bg-black flex search bg-color-550">
         <input
           className="bg-slate-200 h-6 mr-2 pl-2 text-sm rounded font-search  focus:outline-none focus:bg-white"
           type="search"
