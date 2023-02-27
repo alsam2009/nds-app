@@ -10,22 +10,22 @@ export const formatDate = (dateString) => {
 export const getColorTag = (val) => {
   switch (val) {
     case navbar[1]:
-      return `bg-color-150`;
+      return { baseClass: "bg-color-150", otherClass: "bg-color-190" };
 
     case navbar[2]:
-      return `bg-color-690`;
+      return { baseClass: "bg-color-650", otherClass: "bg-color-690" };
 
     case navbar[3]:
-      return `bg-color-800`;
+      return { baseClass: "bg-color-800", otherClass: "bg-color-850" };
 
     case navbar[4]:
-      return `bg-color-500`;
+      return { baseClass: "bg-color-500", otherClass: "bg-color-550" };
 
     case navbar[5]:
-      return `bg-color-350`;
+      return { baseClass: "bg-color-350", otherClass: "bg-color-390" };
 
     default:
-      return "bg-base-400";
+      return { baseClass: "bg-base-400", otherClass: "bg-base-500" };
   }
 };
 
