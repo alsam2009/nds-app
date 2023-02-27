@@ -22,11 +22,11 @@ const Filter = () => {
       <NavLink to={`/survey?filter=Обзоры`} className={setActive}>
         Обзоры
       </NavLink>
-      <NavLink to={`/interesting?filter=Интересно`} className={setActive}>
-        Интересно
-      </NavLink>
       <NavLink to={`/events?filter=Мероприятия`} className={setActive}>
         Мероприятия
+      </NavLink>
+      <NavLink to={`/interesting?filter=Интересно`} className={setActive}>
+        Интересно
       </NavLink>
     </>
   );
