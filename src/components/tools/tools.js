@@ -1,3 +1,4 @@
+import { navbar } from "../../nds.config";
 //formate Date форматирование даты
 export const formatDate = (dateString) => {
   const date = new Date(dateString);
@@ -5,28 +6,26 @@ export const formatDate = (dateString) => {
   return date.toLocaleDateString("ru-RU", options);
 };
 
-//colorsTags вывод определенного класса для цвета
+//colorsTags вывод определенного класса для цвета *navbar берез из импорта
 export const getColorTag = (val) => {
-  const tags = ["важное", "новинки", "обзоры", "мероприятия", "интересно"];
+  switch (val) {
+    case navbar[1]:
+      return { baseClass: "bg-color-150", otherClass: "bg-color-190" };
 
-  switch (val.toLowerCase()) {
-    case tags[0]:
-      return `bg-red-500`;
+    case navbar[2]:
+      return { baseClass: "bg-color-650", otherClass: "bg-color-690" };
 
-    case tags[1]:
-      return `bg-cyan-500`;
+    case navbar[3]:
+      return { baseClass: "bg-color-800", otherClass: "bg-color-850" };
 
-    case tags[2]:
-      return `bg-violet-500`;
+    case navbar[4]:
+      return { baseClass: "bg-color-500", otherClass: "bg-color-550" };
 
-    case tags[3]:
-      return `bg-teal-500`;
-
-    case tags[4]:
-      return `bg-amber-500`;
+    case navbar[5]:
+      return { baseClass: "bg-color-350", otherClass: "bg-color-390" };
 
     default:
-      return "bg-slate-400";
+      return { baseClass: "bg-base-400", otherClass: "bg-base-500" };
   }
 };
 
@@ -44,9 +43,9 @@ export const scrollHandler = (e, data, total, state) => {
 };
 //функция обрезки предложения до целого слова
 
-export const truncateSentence = (sentence) => {
-  if (sentence.length > 55) {
-    sentence = sentence.substring(0, 55);
+export const truncateSentence = (sentence, symb = 55) => {
+  if (sentence.length > symb) {
+    sentence = sentence.substring(0, symb);
     sentence = sentence.substring(
       0,
       Math.min(sentence.length, sentence.lastIndexOf(" "))

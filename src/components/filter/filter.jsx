@@ -1,23 +1,29 @@
 import React from "react";
-import { Link } from "react-router-dom";
-
-import useTagsData from "../hooks/usetagsData";
+import { NavLink } from "react-router-dom";
 
 const Filter = () => {
-  const tags = useTagsData();
+  const setActive = ({ isActive }) =>
+    isActive
+      ? `block hover:-base-300 px-4 py-2 font-normal hover:bg-base-600 hover:transition mr-2 bg-base-600`
+      : `block hover:-base-300 px-4 py-2 font-normal hover:bg-base-600 hover:transition mr-2`;
 
   return (
     <>
-      {tags &&
-        Object.values(tags).map((item, i) => (
-          <Link
-            className="block hover:-gray-300 px-4 py-2 font-normal hover:bg-gray-900 hover:transition mr-2"
-            key={i}
-            to={`/filter?filter=${item}`}
-          >
-            {item}
-          </Link>
-        ))}
+      <NavLink to={`/important?filter=Важное`} className={setActive}>
+        Важное
+      </NavLink>
+      <NavLink to={`/novelty?filter=Новинки`} className={setActive}>
+        Новинки
+      </NavLink>
+      <NavLink to={`/survey?filter=Обзоры`} className={setActive}>
+        Обзоры
+      </NavLink>
+      <NavLink to={`/events?filter=Мероприятия`} className={setActive}>
+        Мероприятия
+      </NavLink>
+      <NavLink to={`/interesting?filter=Интересно`} className={setActive}>
+        Интересно
+      </NavLink>
     </>
   );
 };

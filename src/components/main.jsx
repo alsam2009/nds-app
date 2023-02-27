@@ -3,7 +3,7 @@ import CardList from "./card/cardList";
 
 const Main = () => {
   return (
-    <main className="pt-8 dark:bg-base-500">
+    <main className="pt-8 dark:bg-base-600">
       <CardList />
     </main>
   );

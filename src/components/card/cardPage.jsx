@@ -22,10 +22,10 @@ const CardPage = () => {
         <div className="w-[40%]">
           <img src={data.data.image_url} alt={data.data.title} />
         </div>
-        <div className="p-2 text-slate-500">{data.data.article_preview}</div>
+        <div className="p-2 text-base-400">{data.data.article_preview}</div>
         <div className="p-2">
           Полную новость читайте по{" "}
-          <a className="text-slate-500" href={data.data.article_url}>
+          <a className="text-base-400" href={data.data.article_url}>
             ссылке.
           </a>
         </div>
