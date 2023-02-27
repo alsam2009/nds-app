@@ -44,9 +44,9 @@ export const scrollHandler = (e, data, total, state) => {
 };
 //функция обрезки предложения до целого слова
 
-export const truncateSentence = (sentence) => {
-  if (sentence.length > 55) {
-    sentence = sentence.substring(0, 55);
+export const truncateSentence = (sentence, symb = 55) => {
+  if (sentence.length > symb) {
+    sentence = sentence.substring(0, symb);
     sentence = sentence.substring(
       0,
       Math.min(sentence.length, sentence.lastIndexOf(" "))
