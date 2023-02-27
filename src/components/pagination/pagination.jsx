@@ -18,7 +18,7 @@ function Pagination({
     <nav className="m-3 flex justify-center">
       <button
         onClick={prevPage}
-        className="px-3 py-2 ml-0 leading-tight text-gray-500 bg-white border border-gray-300 rounded-l-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+        className="px-3 py-2 ml-0 leading-tight text-base-400 bg-base-100 border border-base-300 rounded-l-lg hover:bg-base-100 hover:text-base-500 dark:bg-base-600 dark:border-bass-600 dark:text-base-400 dark:hover:bg-base-600 dark:hover:text-base-100"
       >
         Пред
       </button>
@@ -28,10 +28,10 @@ function Pagination({
             <button
               onClick={() => paginate(number)}
               className={
-                "px-3 py-2 leading-tight  border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white" +
+                "px-3 py-2 leading-tight  border border-base-300 hover:bg-base-100 hover:text-base-600 dark:bg-base-500 dark:border-base-600 dark:text-base-400 dark:hover:bg-base-600 dark:hover:text-base-100" +
                 (number === currentPage
-                  ? " bg-slate-400 text-white"
-                  : "bg-white text-gray-500")
+                  ? " bg-base-400 text-base-100"
+                  : "bg-base-100 text-base-500")
               }
             >
               {number}
@@ -42,7 +42,7 @@ function Pagination({
 
       <button
         onClick={nextPage}
-        className="px-3 py-2 leading-tight text-gray-500 bg-white border border-gray-300 rounded-r-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+        className="px-3 py-2 leading-tight text-base-400 bg-base-100 border border-base-300 rounded-r-lg hover:bg-base-100 hover:text-base-600 dark:bg-base-600 dark:border-base-600 dark:text-base-400 dark:hover:bg-base-600 dark:hover:text-base-100"
       >
         След
       </button>

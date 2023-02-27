@@ -1,3 +1,4 @@
+import { navbar } from "../../nds.config";
 //formate Date форматирование даты
 export const formatDate = (dateString) => {
   const date = new Date(dateString);
@@ -5,28 +6,26 @@ export const formatDate = (dateString) => {
   return date.toLocaleDateString("ru-RU", options);
 };
 
-//colorsTags вывод определенного класса для цвета
+//colorsTags вывод определенного класса для цвета *navbar берез из импорта
 export const getColorTag = (val) => {
-  const tags = ["важное", "новинки", "обзоры", "мероприятия", "интересно"];
+  switch (val) {
+    case navbar[1]:
+      return `bg-color-150`;
 
-  switch (val.toLowerCase()) {
-    case tags[0]:
-      return `bg-red-500`;
+    case navbar[2]:
+      return `bg-color-690`;
 
-    case tags[1]:
-      return `bg-cyan-500`;
+    case navbar[3]:
+      return `bg-color-800`;
 
-    case tags[2]:
-      return `bg-violet-500`;
+    case navbar[4]:
+      return `bg-color-500`;
 
-    case tags[3]:
-      return `bg-teal-500`;
-
-    case tags[4]:
-      return `bg-amber-500`;
+    case navbar[5]:
+      return `bg-color-350`;
 
     default:
-      return "bg-slate-400";
+      return "bg-base-400";
   }
 };
 

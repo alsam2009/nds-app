@@ -12,7 +12,7 @@ const Card = ({ data }) => {
           data.map((item, i) => (
             <li key={i}>
               <Link to={`/card/${item.id}`}>
-                <div className="dark:bg-slate-500 h-[416px] w-[310px] max-w-xs bg-white px-0 shadow-md mr-3 mt-3 flex flex-col">
+                <div className="dark:bg-base-400 h-[416px] w-[310px] max-w-xs bg-base-100 px-0 shadow-md mr-3 mt-3 flex flex-col">
                   <div className="relative">
                     <div
                       className={
@@ -44,7 +44,7 @@ const Card = ({ data }) => {
                   </div>
                   <div className="mt-auto p-3">
                     <div className="flex justify-between items-center">
-                      <p className="dark:text-white underline text-slate-400 text-xs">
+                      <p className="dark:text-white underline text-base-400 text-xs">
                         {formatDate(item.publication_date)}
                       </p>
                     </div>
