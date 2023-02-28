@@ -4,12 +4,28 @@ const AdditionalBar = () => {
   const [theme, setTheme] = useState(true);
 
   const element = document.documentElement;
-  const handleThemeSwitch = () => {
-    setTheme((prevDarkMode) => !prevDarkMode);
-    theme === true
-      ? element.classList.add("dark")
-      : element.classList.remove("dark");
-  };
+  const darkQuery = window.matchMedia(('prefers-color=scheme: dark'))
+    function onWindowMatch () {
+    if(localStorage.theme === 'dark'||
+        (!('theme' in localStorage) && darkQuery.matches)
+     ) {
+        element.classList.add('dark')
+    }else {
+        element.classList.remove('dark')
+    }
+    }
+    onWindowMatch()
+    const handleThemeSwitch = () => {
+        setTheme(prevDarkMode=>!prevDarkMode)
+        // theme===true?element.classList.add('dark'):element.classList.remove('dark')
+        if(theme===true){
+            localStorage.setItem('theme','dark')
+            element.classList.add('dark')
+        }else {
+            localStorage.setItem('theme', 'light')
+            element.classList.remove('dark')
+        }
+    }
   return (
     <div className="flex dark:bg-base-500 justify-between bg-base-500 w-full h-8 px-4 items-center additional-info">
 

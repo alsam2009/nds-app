@@ -4,8 +4,8 @@ import { NavLink } from "react-router-dom";
 const Filter = () => {
   const setActive = ({ isActive }) =>
     isActive
-      ? `block hover:-base-300 px-4 py-2 font-normal hover:bg-base-600 hover:transition mr-2 bg-base-600`
-      : `block hover:-base-300 px-4 py-2 font-normal hover:bg-base-600 hover:transition mr-2`;
+      ? "block px-4 py-2 mr-2 font-normal dark:text-base-600 bg-base-500 dark:bg-base-400 hover:bg-base-500 dark:hover:bg-base-400 hover:transition"
+      : "block px-4 py-2 font-normal dark:hover:text-base-600 mr-2 hover:bg-base-500 dark:hover:bg-base-400 hover:transition";
 
   return (
     <>

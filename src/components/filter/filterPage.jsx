@@ -13,8 +13,8 @@ const FilterPage = () => {
     fetcher
   );
 
-  if (error) return <div>Ошибка...</div>;
-  if (isLoading) return <div>Загрузка...</div>;
+  if (error) return <div className="dark:h-screen dark:text-base-400 dark:bg-base-500">Ошибка...</div>;
+  if (isLoading) return <div className="dark:h-screen dark:text-base-400 dark:bg-base-500">Загрузка...</div>;
 
   return data && <Card data={data.data} />;
 };

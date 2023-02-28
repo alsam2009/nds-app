@@ -7,7 +7,7 @@ import { formatDate, getColorTag, truncateSentence } from "../tools/tools";
 const Card = ({ data }) => {
   return (
     <>
-      <ul className="flex flex-wrap justify-between">
+      <ul className="flex flex-wrap justify-between dark:bg-base-500">
         {data &&
           data.map((item, i) => {
             const { baseClass, otherClass } = getColorTag(item.tag_article);
@@ -15,7 +15,7 @@ const Card = ({ data }) => {
             return (
               <li key={i}>
                 <Link to={`/card/${item.id}`}>
-                  <div className="dark:bg-base-400 h-[416px] w-[310px] max-w-xs bg-base-100 px-0 shadow-md mr-3 mt-3 flex flex-col">
+                  <div className="h-[416px] w-[310px] max-w-xs bg-base-100 dark:bg-base-500 px-0 shadow-md dark:shadow-2xl mr-3 mt-3 flex flex-col">
                     <div className="relative">
                       <div
                         className={
@@ -26,7 +26,7 @@ const Card = ({ data }) => {
                         <div className={otherClass + " p-1.5"}>
                           <img src={tagIcon} alt="tag-icon" />
                         </div>
-                        <div className="text-white text-xs p-1.5">
+                        <div className="text-white text-xs leading-none p-1.5">
                           {item.tag_article.toUpperCase()}
                         </div>
                       </div>
@@ -43,7 +43,7 @@ const Card = ({ data }) => {
                     </div>
                     <div className="mt-auto p-3">
                       <div className="flex justify-between items-center">
-                        <p className="dark:text-white underline text-base-400 text-xs">
+                        <p className="dark:text-white text-base-400 text-xs">
                           {formatDate(item.publication_date)}
                         </p>
                       </div>
