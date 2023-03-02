@@ -2,13 +2,13 @@ import React, { useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import NonFoundPage from "./components/404";
-import CardPage from "./components/card/cardPage";
+import CardPage from "./components/pages/cardPage";
 import DataContex from "./components/dataContex";
-import FilterPage from "./components/filter/filterPage";
+import FilterPage from "./components/pages/filterPage";
 import Main from "./components/main";
 import AdditionalBar from "./components/menu/additional";
 import Menu from "./components/menu/menu";
-import SearchPage from "./components/search/searcPage";
+import SearchPage from "./components/pages/searchPage";
 
 function App() {
   const [globalData, setGlobalData] = useState([]);

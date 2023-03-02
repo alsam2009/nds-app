@@ -3,6 +3,7 @@ import { useSearchParams } from "react-router-dom";
 import useSWR from "swr";
 
 import Card from "../card/card";
+import LoaderContent from "../loaderContent/loaderContent";
 import { fetcher } from "../tools/fetcher";
 
 const FilterPage = () => {
@@ -14,9 +15,17 @@ const FilterPage = () => {
   );
 
   if (error) return <div>Ошибка...</div>;
-  if (isLoading) return <div>Загрузка...</div>;
+  if (isLoading) return <LoaderContent />;
 
-  return data && <Card data={data.data} />;
+  return (
+    data && (
+      <ul className="flex flex-wrap justify-between">
+        {data.data.map((item, i) => (
+          <Card data={item} key={i} />
+        ))}
+      </ul>
+    )
+  );
 };
 
 export default FilterPage;
