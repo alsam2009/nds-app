@@ -5,8 +5,9 @@ import tagIcon from "../../images/tag-icon.svg";
 import { formatDate, getColorTag, truncateSentence } from "../tools/tools";
 
 const Card = ({ data }) => {
+  // console.log(data)
   return (
-    <>
+    // <>
       <ul className="flex flex-wrap justify-between dark:bg-base-500">
         {data &&
           data.map((item, i) => {
@@ -54,7 +55,7 @@ const Card = ({ data }) => {
             );
           })}
       </ul>
-    </>
+    // </>
   );
 };
 

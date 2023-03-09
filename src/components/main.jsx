@@ -4,7 +4,7 @@ import Divider from "./divider";
 
 const Main = () => {
   return (
-    <main className="pt-8 dark:bg-base-500">
+    <main className="dark:bg-base-500">
       <Divider name="Важное" color="color-150"/>
       <Divider name="Все новости" color="color-550"/>
       <CardList />
