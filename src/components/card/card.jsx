@@ -27,7 +27,7 @@ const Card = ({ data }) => {
                           <img src={tagIcon} alt="tag-icon" />
                         </div>
                         <div className="text-white text-xs leading-none p-1.5">
-                          {item.tag_article.toUpperCase()}
+                          {item.tag.toUpperCase()}
                         </div>
                       </div>
                       <img

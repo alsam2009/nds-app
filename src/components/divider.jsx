@@ -2,7 +2,6 @@ import React from 'react'
 
 const Divider = ({ name, color }) => {
   const paramDivider = `w-auto h-6 mx-8 mb-5 border-b-2 border-${color} items-center text-base-200  divider`
-  console.log(paramDivider)
   return (
     <div
       className={paramDivider}

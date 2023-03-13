@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import CardItem from "./cardItem";
 import AdditionalBar from "./additional"
+import CurrencyInfo from "./menu/currencyInfo";
 
 const CardList = () => {
   const [data, setData] = useState([]);
@@ -42,6 +43,7 @@ const CardList = () => {
   }, [currentPage, data, fetching]);
   return (
     <>
+      <CurrencyInfo />
       <AdditionalBar/>
       <CardItem data={data} />
     </>

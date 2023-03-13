@@ -7,6 +7,7 @@ import DataContex from "./components/dataContex";
 import FilterPage from "./components/filter/filterPage";
 import Main from "./components/main";
 import AdditionalBar from "./components/menu/additional";
+import CurrencyInfo from "./components/menu/currencyInfo";
 import Menu from "./components/menu/menu";
 import SearchPage from "./components/search/searcPage";
 
