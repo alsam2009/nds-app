@@ -22,7 +22,7 @@ const Search = () => {
           onChange={handleChange}
         />
         {query.length > 0 ? (
-          <Link to={`/search?search=${query}`}>
+          <Link to={`/search?filter=${query}`}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
