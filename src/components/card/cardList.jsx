@@ -39,7 +39,7 @@ const CardList = () => {
 
   if (loading) {
     return (
-      <div className="flex gap-5">
+      <div className="flex gap-5 dark:bg-base-500">
         <LoaderContent />
         <LoaderContent />
         <LoaderContent />
@@ -51,11 +51,9 @@ const CardList = () => {
 
   return (
     <>
-      {
-        <section className="flex px-8 justify-between flex-wrap">
+        <section className="flex flex-wrap justify-between px-8 pb-8 ">
           <Card data={globalData} />
         </section>
-      }
     </>
   );
 };

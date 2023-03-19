@@ -22,17 +22,16 @@ const FilterPage = () => {
 
   return (
     <>
-      <Divider name={data.data[0].tag_article} color={getColorTag(data.data[0].tag_article)} />
-      <section className="flex px-8 mb-8 dark:bg-base-500">
-        <Card data={data.data} />
-      </section>
+      {data &&
+        <>
+          <Divider name={data.data[0].tag_article} color={getColorTag(data.data[0].tag_article)} />
+          <section className="flex flex-wrap justify-between px-8 pb-8 dark:bg-base-500">
+            <Card data={data.data} />
+          </section>
+        </>
+      }
     </>
-    )
-    // } {/* data && (
-      // {/*  */}
-
-        //  */}
-  // )
+  )
 };
 
 export default FilterPage;

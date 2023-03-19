@@ -4,9 +4,9 @@ const LoaderContent = () => {
   return (
     <div
       role="status"
-      className="max-w-sm p-4 border border-gray-200 rounded shadow animate-pulse md:p-6 dark:border-gray-700"
+      className="max-w-sm p-4 border border-gray-200 rounded shadow animate-pulse md:p-6 dark:border-gray-700 dark:bg-base-500"
     >
-      <div className="flex items-center justify-center h-48 mb-4 bg-gray-300 rounded dark:bg-gray-700">
+      <div className="flex items-center justify-center h-48 mb-4 bg-gray-300 rounded dark:bg-base-500">
         <svg
           className="w-12 h-12 text-gray-200 dark:text-gray-600"
           xmlns="http://www.w3.org/2000/svg"

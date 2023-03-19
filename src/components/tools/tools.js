@@ -29,6 +29,23 @@ export const getColorTag = (val) => {
   }
 };
 
+export const borderColor = color => {
+  switch (color) {
+    case 'color-150':
+      return 'border-color-150';
+    case 'color-650':
+      return 'border-color-650';
+    case 'color-800':
+      return 'border-color-800';
+    case 'color-550':
+      return 'border-color-550';
+    case 'color-350':
+      return 'border-color-350';
+    default:
+      return 'border-color-750';
+  }
+}
+
 //scrollHandler функция скролла
 
 export const scrollHandler = (e, data, total, state) => {
