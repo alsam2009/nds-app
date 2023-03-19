@@ -1,6 +1,9 @@
 import React from 'react'
 
 const Divider = ({ name, color }) => {
+
+  const paramDivider = `w-auto h-6 mx-8 mb-5 border-b-2 border-${color} items-center text-base-200  divider`
+
   // console.log(color)
   let borderColor;
   let bgColor;
@@ -29,6 +32,7 @@ const Divider = ({ name, color }) => {
   const spanColor = `px-2 py-0.5 bg-${bgColor}`
   const bottomBorder = `w-auto h-6 mx-8 border-b-2 dark:bg-base-500 items-center text-base-200  divider ` + borderColor
   // console.log('bottomBorder: ', bottomBorder);
+
   return (
     <>
       <div className='w-auto h-5 dark:bg-base-500'></div>
