@@ -11,7 +11,7 @@ const Card = ({ data }) => {
 
   return (
     <Link to={`/card/${id}`}>
-      <div className="dark:bg-base-400 h-[416px] w-[310px] max-w-xs bg-base-100 px-0 shadow-md mr-3 mt-3 flex flex-col">
+      <div className="dark:bg-base-400 h-[416px]  max-w-xs bg-base-100 px-0 shadow-md flex flex-col">
         <div className="relative">
           <div
             className={

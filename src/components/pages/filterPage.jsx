@@ -38,7 +38,7 @@ const FilterPage = () => {
 
   return (
     <div>
-      <ul className="flex flex-wrap justify-between">
+      <ul className="container mx-auto grid grid-cols-5 gap-4">
         {data.map((pageData) =>
           pageData.map((item) => <Card data={item} key={item.id} />)
         )}
