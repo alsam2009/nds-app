@@ -19,7 +19,7 @@ export const getColorTag = (val) => {
       return { baseClass: "bg-color-800", otherClass: "bg-color-850" };
 
     case navbar[4]:
-      return { baseClass: "bg-color-500", otherClass: "bg-color-550" };
+      return { baseClass: "bg-color-550", otherClass: "bg-color-590" };
 
     case navbar[5]:
       return { baseClass: "bg-color-350", otherClass: "bg-color-390" };

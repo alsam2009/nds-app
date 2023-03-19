@@ -30,7 +30,6 @@ function App() {
           <Route path="/search/" element={<SearchPage />} />
           <Route path="*" element={<NonFoundPage />} />
         </Routes>
-        {/* <Main /> */}
       </DataContex.Provider>
     </>
   );

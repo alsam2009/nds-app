@@ -16,19 +16,23 @@ const CardPage = () => {
   return (
     data && (
       <>
-        <div className="m-2 text-xl">
+        <div className="w-auto h-5 dark:bg-base-500"></div>
+        <div className="w-auto h-screen dark:bg-base-500 ">
+        <div className="p-3 dark:bg-base-500 text-xl dark:text-base-100">
           <h2>{data.data.title}</h2>
         </div>
-        <div className="w-[40%]">
+        <div className="p-3 w-[500px]">
           <img src={data.data.image_url} alt={data.data.title} />
         </div>
-        <div className="p-2 text-base-400">{data.data.article_preview}</div>
-        <div className="p-2">
+        <div className="p-3 dark:bg-base-500 text-base-500 dark:text-base-300">{data.data.article_preview}</div>
+        <div className="p-3 dark:bg-base-500 dark:text-base-400">
           Полную новость читайте по{" "}
-          <a className="text-base-400" href={data.data.article_url}>
-            ссылке.
+          <a className="dark:bg-base-500 text-base-500 underline dark:text-color-100" rel="noreferrer" target="_blank" href={data.data.article_url}>
+            ссылке
           </a>
+          </div>
         </div>
+
       </>
     )
   );
