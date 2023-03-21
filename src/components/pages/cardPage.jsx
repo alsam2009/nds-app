@@ -5,10 +5,12 @@ import { fetcher } from "../tools/fetcher";
 
 const CardPage = () => {
   const { id } = useParams();
+
   const { data, error, isLoading } = useSWR(
     `http://localhost:3000/data/${id}`,
     fetcher
   );
+
 
   if (error) return <div>Ошибка загрузки</div>;
   if (isLoading) return <div>Загрузка...</div>;
@@ -17,15 +19,15 @@ const CardPage = () => {
     data && (
       <>
         <div className="m-2 text-xl">
-          <h2>{data.data.title}</h2>
+          <h2>{data.title}</h2>
         </div>
         <div className="w-[40%]">
-          <img src={data.data.image_url} alt={data.data.title} />
+          <img src={data.image_url} alt={data.title} />
         </div>
-        <div className="p-2 text-base-400">{data.data.article_preview}</div>
+        <div className="p-2 text-base-400">{data.article_preview}</div>
         <div className="p-2">
           Полную новость читайте по{" "}
-          <a className="text-base-400" href={data.data.article_url}>
+          <a className="text-base-400" href={data.article_url}>
             ссылке.
           </a>
         </div>
