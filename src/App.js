@@ -1,35 +1,28 @@
-import React, { useState } from "react";
+import React from "react";
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
-import NonFoundPage from "./components/404";
-import CardPage from "./components/card/cardPage";
-import DataContex from "./components/dataContex";
-import FilterPage from "./components/filter/filterPage";
-import Main from "./components/main";
-import AdditionalBar from "./components/menu/additional";
+import NonFoundPage from "./components/pages/404";
+import CardPage from "./components/pages/cardPage";
+import FilterPage from "./components/pages/filterPage";
+import AdditionalBar from "./components/AdditionalBar/AdditionalBar";
 import Menu from "./components/menu/menu";
-import SearchPage from "./components/search/searcPage";
 
 function App() {
-  const [globalData, setGlobalData] = useState([]);
-
   return (
     <>
-      <DataContex.Provider value={{ globalData, setGlobalData }}>
-        <AdditionalBar />
-        <Menu />
-        <Routes>
-          <Route path="/" exact element={<Main />} />
-          <Route path="/card/:id" element={<CardPage />} />
-          <Route path="/important/" element={<FilterPage />} />
-          <Route path="/novelty/" element={<FilterPage />} />
-          <Route path="/survey/" element={<FilterPage />} />
-          <Route path="/interesting/" element={<FilterPage />} />
-          <Route path="/events/" element={<FilterPage />} />
-          <Route path="/search/" element={<SearchPage />} />
-          <Route path="*" element={<NonFoundPage />} />
-        </Routes>
-      </DataContex.Provider>
+      <AdditionalBar />
+      <Menu />
+      <Routes>
+        <Route path="/" exact element={<FilterPage name={["Важное", "Все новости"]} color={["color-150", "color-550"]} />} />
+        <Route path="/card/:id" element={<CardPage />} />
+        <Route path="/important/" element={<FilterPage name="Важное" color="color-150" />} />
+        <Route path="/novelty/" element={<FilterPage name="Новинки" color="color-650"/>} />
+        <Route path="/survey/" element={<FilterPage name="Обзоры" color="color-800"/>} />
+        <Route path="/interesting/" element={<FilterPage name="Интересно" color="color-350"/>} />
+        <Route path="/events/" element={<FilterPage name="Мероприятия" color="color-550"/>} />
+        <Route path="/search/" element={<FilterPage name="Поиск" color="color-550"/>} />
+        <Route path="*" element={<NonFoundPage />} />
+      </Routes>
     </>
   );
 }

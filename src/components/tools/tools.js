@@ -29,6 +29,7 @@ export const getColorTag = (val) => {
   }
 };
 
+// выбор цвета границы Divider
 export const borderColor = color => {
   switch (color) {
     case 'color-150':
@@ -44,7 +45,7 @@ export const borderColor = color => {
     default:
       return 'border-color-750';
   }
-}
+};
 
 //scrollHandler функция скролла
 
