@@ -3,12 +3,15 @@ import { useSearchParams } from "react-router-dom";
 import { useInView } from "react-intersection-observer";
 import useSWRInfinite from "swr/infinite";
 import Card from "../card/card";
-import { fetcher } from "../tools/fetcher";
+import { fetcher}  from "../tools/fetcher";
+import Divider from "../divider/Divider";
+import ImportantSection from '../ImportantSection/ImportantSection'
 
-const FilterPage = () => {
+const FilterPage = ({ name, color }) => {
   const { ref, inView } = useInView({
     threshold: 0,
   });
+
 
   const [searchParams] = useSearchParams();
   const filterQuery = searchParams.get("filter") || "";
@@ -34,11 +37,22 @@ const FilterPage = () => {
     }
   }, [inView, size, isLoadingMore, setSize]);
 
-  if (!data) return <div>Загрузка...</div>;
+  if (!data) return <div className="dark:h-screen dark:text-base-400 dark:bg-base-500">Загрузка...</div>;
 
   return (
-    <div>
-      <ul className="container mx-auto grid grid-cols-5 gap-4">
+    <div className="dark:bg-base-500">
+      {typeof (name) !== 'string' &&
+        <>
+          <Divider name={name[0]} color={color[0]}/>
+          <ImportantSection/>
+        </>
+      }
+      {typeof (name) === 'string'
+        ? <Divider name={name} color={color} />
+        : <Divider name={name[1]} color={color[1]} />
+      }
+
+      <ul className="container mx-auto grid grid-cols-5 gap-4 dark:bg-base-500">
         {data.map((pageData) =>
           pageData.map((item) => <Card data={item} key={item.id} />)
         )}
