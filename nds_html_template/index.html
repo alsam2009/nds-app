@@ -33,7 +33,7 @@
       <div class="w-10"></div>
     </div>
     <!-- Menu component -->
-    <nav class="sticky top-0 bg-color-550">
+    <nav class="sticky top-0 bg-color-550 z-50">
       <div class="flex w-auto items-center mx-8 justify-between">
         <div class="flex text-md font-bold text-base-100">
           <a
@@ -43,22 +43,22 @@
             Главная
           </a>
           <a
-            href="#"
+            href="./important.html"
             class="block hover:text-base-200 px-4 py-2 font-normal hover:bg-base-500 hover:transition mr-2"
           >
-            Важное
+            Важное &rarr;
           </a>
           <a
             href="./new.html"
             class="block hover:text-base-200 px-4 py-2 font-normal hover:bg-base-500 hover:transition mr-2"
           >
-            Новинки
+            Новинки &rarr;
           </a>
           <a
-            href="#"
+            href="./section.html"
            class="block hover:text-base-200 px-4 py-2 font-normal hover:bg-base-500 hover:transition mr-2"
           >
-            Обзоры
+            Section &rarr;
           </a>
           <a
             href="#"
@@ -94,62 +94,141 @@
       <div
         class="w-auto h-6 mx-8 mb-5 border-b-2 border-color-150 items-center text-white divider"
       >
-        <span class=" px-2 py-0.5 bg-color-150">РАЗДЕЛИТЕЛЬ</span>
+        <span class="bg-color-150 px-2 py-0.5">ВАЖНОЕ</span>
       </div>
       <section class="flex px-8 mb-8 main_block">
         <!-- Important news component -->
-        <div class="w-8/12 pr-10 overflow-x-auto important_news">
-          <!-- Important news image component -->
-          <div class="max-w-[855px] overflow-hidden">
-            <img src="./img/important_big.png" class="mb-5" alt="image" />
-          </div>
+        <div class="flex flex-col pr-10 w-8/12 important_news">
+          <!-- Important news image component w-[800px] h-[433px]-->
+          <a src="#" class="cursor-pointer relative">
+            <div class="w-[855px] h-[465px] mb-5 pr-10 bg-clip-content">
+              <img
+              src="https://avatars.dzeninfra.ru/get-zen_doc/5175112/pub_611a79aa3633e2616f1b1c39_611a7aa5c846e836cba77d37/scale_1200"
+              class="max-w-full h-[465px]" alt="image" />
+            </div>
+            <div class="absolute w-[855px] h-[465px] top-0 pr-10 z-10" style="background: linear-gradient(180deg, rgba(73, 73, 73, 0) 34.38%, #050505 100%); background-clip: content-box;">
+            </div>
+            <div class="flex flex-col bg-clip-content top-0 justify-start translate-y-64 pr-20 pb-1 pl-5 gap-5 w-[855px] absolute text-base-100 z-20">
+              <h3 class="flex justify-center items-center w-20 py-1 border-2 border-color-150 leading-none">ВАЖНОЕ</h3>
+              <p class="text-4xl font-semibold underline">Представлен российский беспилотник БАС-750: он может доставлять грузы массой до 200 кг со скоростью 180 км/ч</p>
+            </div>
+          </a>
           <!-- Important news cards component -->
-          <div class="flex max-w-[855px] justify-between overflow-x-auto">
-            <img
-              src="./img/important_small.png"
-              class="max-w-full h-auto"
-              alt=""
-            />
-            <img
-              src="./img/important_small.png"
-              class="max-w-full h-auto"
-              alt=""
-            />
-            <img
-              src="./img/important_small.png"
-              class="max-w-full h-auto"
-              alt=""
-            />
-            <img src="./img/important_small.png" alt="max-w-full h-auto" />
+          <div class="flex pr-10 w-[855px] justify-between">
+            <a href="#" class="flex flex-col w-[198px] h-[240px] bg-base-200 shadow-md cursor-pointer">
+              <img class=" h-[147px] mb-1.5 object-cover" src="https://avatars.dzeninfra.ru/get-zen_doc/3612047/pub_637cdac8b3c2e13b6ceeba7c_637cdae84d70b554a2723963/scale_1200" alt="image" />
+              <p class="text-sm px-1 pb-1 underline">Представлен российский беспилотник БАС-750: он может доставлять грузы массой до 200 кг со скоростью 180 км/ч</p>
+            </a>
+            <a href="#" class="flex flex-col w-[198px] h-[240px] bg-base-200 shadow-md cursor-pointer">
+              <img class=" h-[147px] mb-1.5 object-cover" src="https://avatars.dzeninfra.ru/get-zen_doc/3612047/pub_637cdac8b3c2e13b6ceeba7c_637cdae84d70b554a2723963/scale_1200" alt="image" />
+              <p class="text-sm px-1 pb-1 underline">Представлен российский беспилотник БАС-750: он может доставлять грузы массой до 200 кг со скоростью 180 км/ч</p>
+            </a>
+            <a href="#" class="flex flex-col w-[198px] h-[240px] bg-base-200 shadow-md cursor-pointer">
+              <img class=" h-[147px] mb-1.5 object-cover" src="https://avatars.dzeninfra.ru/get-zen_doc/3612047/pub_637cdac8b3c2e13b6ceeba7c_637cdae84d70b554a2723963/scale_1200" alt="image" />
+              <p class="text-sm px-1 pb-1 underline">Представлен российский беспилотник БАС-750: он может доставлять грузы массой до 200 кг со скоростью 180 км/ч</p>
+            </a>
+            <a href="#" class="flex flex-col w-[198px] h-[240px] bg-base-200 shadow-md cursor-pointer">
+              <img class=" h-[147px] mb-1.5 object-cover" src="https://avatars.dzeninfra.ru/get-zen_doc/3612047/pub_637cdac8b3c2e13b6ceeba7c_637cdae84d70b554a2723963/scale_1200" alt="image" />
+              <p class="text-sm px-1 pb-1 underline">Представлен российский беспилотник БАС-750: он может доставлять грузы массой до 200 кг со скоростью 180 км/ч</p>
+            </a>
           </div>
         </div>
 
-        <div class="w-4/12 popular_news">
+        <div class="flex flex-col w-4/12 popular_news">
           <div
             class="flex justify-center items-center min-h-[192px] bg-base-500 text-white text-3xl mb-4"
           >
             РЕКЛАМА
           </div>
-          <div class="">
-            <img src="./img/hot_news.png" class="min-w-full" alt="hot_news" />
+          <div class="flex flex-col w-full h-[518px] bg-base-200 shadow-md">
+            <div class="flex h-10 p-1.5 justify-start items-center bg-base-300 border-b-2 border-base-400 text-base-500">
+              <p><b>ТОП ></b><p>
+            </div>
+            <a src="#" class="border-base-300 h-13 p-1.5 cursor-pointer border-b-2 text-sm underline">
+              <p>Инспекторская группа «Царские волки» провела испытания в зоне СВО комплекса РЭБ «Барьер-купол» &rarr;</p>
+            </a>
+            <a src="#" class="border-base-300 h-13 p-1.5 cursor-pointer border-b-2 text-sm underline">
+              <p>Представлен российский беспилотник БАС-750: он может доставлять грузы массой до 200 кг со скоростью 180 км/ч &rarr;</p>
+            </a>
+            <a src="#" class="border-base-300 h-13 p-1.5 cursor-pointer border-b-2 text-sm underline">
+              <p>Инспекторская группа «Царские волки» провела испытания</p>
+            </a>
+            <a src="#" class="border-base-300 h-13 p-1.5 cursor-pointer border-b-2 text-sm underline">
+              <p>Инспекторская группа «Царские волки» провела испытания в зоне СВО комплекса РЭБ «Барьер-купол» &rarr;</p>
+            </a>
+            <a src="#" class="border-base-300 h-13 p-1.5 cursor-pointer border-b-2 text-sm underline">
+              <p>Инспекторская группа «Царские волки» провела испытания в зоне СВО комплекса РЭБ «Барьер-купол» &rarr;</p>
+            </a>
+            <a src="#" class="border-base-300 h-13 p-1.5 cursor-pointer border-b-2 text-sm underline">
+              <p>Инспекторская группа «Царские волки» провела испытания в зоне СВО комплекса РЭБ «Барьер-купол» &rarr;</p>
+            </a>
+            <a src="#" class="border-base-300 h-13 p-1.5 cursor-pointer border-b-2 text-sm underline">
+              <p>Инспекторская группа «Царские волки» провела испытания в зоне СВО комплекса РЭБ «Барьер-купол» &rarr;</p>
+            </a>
+            <a src="#" class="border-base-300 h-13 p-1.5 cursor-pointer border-b-2 text-sm underline">
+              <p>Инспекторская группа «Царские волки» провела испытания в зоне СВО комплекса РЭБ «Барьер-купол» &rarr;</p>
+            </a>
+            <a src="#" class="h-13 p-1.5 cursor-pointer text-sm underline">
+              <p>Инспекторская группа «Царские волки» провела испытания в зоне СВО комплекса РЭБ «Барьер-купол» &rarr;</p>
+            </a>
           </div>
         </div>
       </section>
       <div
         class="w-auto h-6 mx-8 mb-5 border-b-2 border-color-550 items-center text-white divider"
       >
-        <span class="bg-color-550 px-2 py-0.5">РАЗДЕЛИТЕЛЬ</span>
+        <span class="bg-color-550 px-2 py-0.5">ВСЕ НОВОСТИ</span>
       </div>
 
       <section class="flex px-8 justify-between flex-wrap">
-        <img src="./img/news_card.png" class="mb-5" alt="" />
-        <img src="./img/news_card.png" class="mb-5" alt="" />
-        <img src="./img/news_card.png" class="mb-5" alt="" />
-        <img src="./img/news_card.png" class="mb-5" alt="" />
-        <img src="./img/news_card.png" class="mb-5" alt="" />
-        <img src="./img/news_card.png" class="mb-5" alt="" />
-        <img src="./img/news_card.png" class="mb-5" alt="" />
-        <img src="./img/news_card.png" class="mb-5" alt="" />
+        <div class="flex flex-wrap gap-x-3 justify-between" >
+          <a src="#" class="flex flex-col w-[310px] h-[416px] bg-base-100 px-0 mb-5 shadow-md cursor-pointer">
+            <img class=" h-[220px] mb-1.5 object-cover" src="https://avatars.dzeninfra.ru/get-zen_doc/3612047/pub_637cdac8b3c2e13b6ceeba7c_637cdae84d70b554a2723963/scale_1200" alt="image" />
+            <div class="text-base-500 font-medium text-lg p-1.5 leading-none">
+              Инспекторская группа «Царские волки» провела испытания в зоне СВО комплекса РЭБ «Барьер-купол»
+            </div>
+            <div class="mt-auto p-1.5 text-sm text-base-400">30 января 2022</div>
+          </a>
+          <a src="#" class="flex flex-col w-[310px] h-[416px] bg-base-100 px-0 mb-5 shadow-md cursor-pointer">
+            <img class=" h-[220px] mb-1.5 object-cover" src="https://avatars.dzeninfra.ru/get-zen_doc/3612047/pub_637cdac8b3c2e13b6ceeba7c_637cdae84d70b554a2723963/scale_1200" alt="image" />
+            <div class="text-base-500 font-medium text-lg p-1.5 leading-none">
+              Инспекторская группа «Царские волки» провела испытания в зоне СВО комплекса РЭБ «Барьер-купол»
+            </div>
+            <div class="mt-auto p-1.5 text-sm text-base-400">30 января 2022</div>
+          </a>
+          <a src="#" class="flex flex-col w-[310px] h-[416px] bg-base-100 px-0 mb-5 shadow-md cursor-pointer">
+            <img class=" h-[220px] mb-1.5 object-cover" src="https://avatars.dzeninfra.ru/get-zen_doc/3612047/pub_637cdac8b3c2e13b6ceeba7c_637cdae84d70b554a2723963/scale_1200" alt="image" />
+            <div class="text-base-500 font-medium text-lg p-1.5 leading-none">
+              Инспекторская группа «Царские волки» провела испытания в зоне СВО комплекса РЭБ «Барьер-купол»
+            </div>
+            <div class="mt-auto p-1.5 text-sm text-base-400">30 января 2022</div>
+          </a>
+          <a src="#" class="flex flex-col w-[310px] h-[416px] bg-base-100 px-0 mb-5 shadow-md cursor-pointer">
+            <img class=" h-[220px] mb-1.5 object-cover" src="https://avatars.dzeninfra.ru/get-zen_doc/3612047/pub_637cdac8b3c2e13b6ceeba7c_637cdae84d70b554a2723963/scale_1200" alt="image" />
+            <div class="text-base-500 font-medium text-lg p-1.5 leading-none">
+              Инспекторская группа «Царские волки» провела испытания в зоне СВО комплекса РЭБ «Барьер-купол»
+            </div>
+            <div class="mt-auto p-1.5 text-sm text-base-400">30 января 2022</div>
+          </a>
+          <a src="#" class="flex flex-col w-[310px] h-[416px] bg-base-100 px-0 mb-5 shadow-md cursor-pointer">
+            <img class=" h-[220px] mb-1.5 object-cover" src="https://avatars.dzeninfra.ru/get-zen_doc/3612047/pub_637cdac8b3c2e13b6ceeba7c_637cdae84d70b554a2723963/scale_1200" alt="image" />
+            <div class="text-base-500 font-medium text-lg p-1.5 leading-none">
+              Инспекторская группа «Царские волки» провела испытания в зоне СВО комплекса РЭБ «Барьер-купол»
+            </div>
+            <div class="mt-auto p-1.5 text-sm text-base-400">30 января 2022</div>
+          </a>
+          <a src="#" class="flex flex-col w-[310px] h-[416px] bg-base-100 px-0 mb-5 shadow-md cursor-pointer">
+            <img class=" h-[220px] mb-1.5 object-cover" src="https://avatars.dzeninfra.ru/get-zen_doc/3612047/pub_637cdac8b3c2e13b6ceeba7c_637cdae84d70b554a2723963/scale_1200" alt="image" />
+            <div class="text-base-500 font-medium text-lg p-1.5 leading-none">
+              Инспекторская группа «Царские волки» провела испытания в зоне СВО комплекса РЭБ «Барьер-купол»
+            </div>
+            <div class="mt-auto p-1.5 text-sm text-base-400">30 января 2022</div>
+          </a>
+
+
+          <div class="w-[310px] h-[416px] px-0 mb-5 invisible"></div>
+          <div class="w-[310px] h-[416px] px-0 mb-5 invisible"></div>
+        </div>
       </section>
     </main>
   </body>

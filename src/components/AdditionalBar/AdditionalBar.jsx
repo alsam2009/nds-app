@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import CurrencyInfo from './СurrencyInfo';
+import Logo from '../../images/logo.png';
 
 const AdditionalBar = () => {
   function useDarkMode() {
@@ -22,7 +23,8 @@ const AdditionalBar = () => {
 
   return (
     <div className='additional-info flex h-8 w-full items-center justify-between bg-base-500 pl-8'>
-      <div className='w-72 text-base-300 '>
+      <div className='flex w-72 items-center text-base-300'>
+        <img src={Logo} className='mr-1 h-6 w-6' alt='logo' />
         <p className='bg-gradient-to-r from-color-690 to-color-890 bg-clip-text text-lg font-bold text-transparent'>
           NDS
         </p>
