@@ -12,9 +12,9 @@ const Search = () => {
 
   return (
     <>
-      <div className="dark:bg-black flex search bg-color-550">
+      <div className="search flex bg-color-550 dark:bg-base-600">
         <input
-          className="bg-base-200 h-6 mr-2 pl-2 text-sm rounded font-search focus:outline-none focus:bg-base-100"
+          className="font-search mr-2 h-6 rounded bg-base-200 pl-2 text-sm focus:bg-base-100 focus:outline-none"
           type="search"
           name="search"
           placeholder="Найти"
@@ -29,7 +29,7 @@ const Search = () => {
               viewBox="0 0 24 24"
               strokeWidth="1.5"
               stroke="currentColor"
-              className="w-5 h-5 text-base-100 cursor-pointer"
+              className="h-5 w-5 cursor-pointer text-base-100"
             >
               <path
                 strokeLinecap="round"
@@ -46,7 +46,7 @@ const Search = () => {
               viewBox="0 0 24 24"
               strokeWidth="1.5"
               stroke="currentColor"
-              className="w-5 h-5 text-base-100 cursor-pointer"
+              className="h-5 w-5 cursor-pointer text-base-100"
             >
               <path
                 strokeLinecap="round"

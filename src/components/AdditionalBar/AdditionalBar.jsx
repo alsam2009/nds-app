@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import CurrencyInfo from './СurrencyInfo';
-import Logo from '../../images/logo.png';
+import Logo from '../../images/logo.png'
 
 const AdditionalBar = () => {
   function useDarkMode() {
@@ -23,14 +23,14 @@ const AdditionalBar = () => {
 
   return (
     <div className='additional-info flex h-8 w-full items-center justify-between bg-base-500 pl-8'>
-      <div className='flex w-72 items-center text-base-300'>
-        <img src={Logo} className='mr-1 h-6 w-6' alt='logo' />
+      <div className='flex items-center w-60 text-base-300 '>
+        <img src={Logo} className="w-6 h-6 mr-1" alt="logo" />
         <p className='bg-gradient-to-r from-color-690 to-color-890 bg-clip-text text-lg font-bold text-transparent'>
           NDS
         </p>
       </div>
       <div className='w-full text-center text-white'>
-        <span className='cursor-pointer bg-gradient-to-r from-color-690 to-color-850 bg-clip-text text-xl font-extrabold tracking-widest text-transparent'>
+        <span className='cursor-pointer bg-gradient-to-r from-color-690 to-color-890 bg-clip-text text-xl font-extrabold tracking-widest text-transparent'>
           ВСЕ ПРО ДРОНЫ
         </span>
       </div>
