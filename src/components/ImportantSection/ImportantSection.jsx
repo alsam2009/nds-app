@@ -1,22 +1,21 @@
-import React from 'react'
+import React from "react";
+import TopNews from "../topNews/topNews";
 
 const ImportantSection = () => {
   return (
-    <section className="flex px-8 mb-8 main_block">
-      <div className="flex flex-col pr-10 w-8/12 important_news">
+    <section className="main_block mb-8 flex px-8">
+      <div className="important_news flex w-8/12 flex-col pr-10">
         ВАЖНЫЕ НОВОСТИ
         {/* {<ImportantNews/>} */}
       </div>
-      <div class="flex flex-col w-4/12 popular_news">
-        {/* {<TopNews/>} */}
-          <div
-            class="flex justify-center items-center min-h-[192px] bg-base-500 text-white text-3xl mb-4"
-          >
-            РЕКЛАМА
+      <div className="popular_news flex w-4/12 flex-col">
+        <div className="mb-4 flex min-h-[192px] items-center justify-center bg-base-500 text-3xl text-white">
+          РЕКЛАМА
         </div>
+        {<TopNews />}
       </div>
-      </section>
-  )
-}
+    </section>
+  );
+};
 
-export default ImportantSection
+export default ImportantSection;
