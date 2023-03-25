@@ -2,30 +2,34 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { fetcher } from "../tools/fetcher";
+import _ from "lodash";
 
 const TopNews = () => {
-  const [randomData, setRandomData] = useState();
+  const [randomData, setRandomData] = useState([]);
+  const [length, setLength] = useState();
+
+  const generateArray = (length, max) => {
+    const numbers = _.shuffle(_.range(1, length)).slice(0, max);
+    const newNumbers = numbers.map((item) => "id=" + item + "&");
+
+    return "http://localhost:3000/data?" + newNumbers.join("").slice(0, -1);
+  };
 
   useEffect(() => {
-    const generateArray = (length, max) => {
-      const numbers = [...Array(length)];
-      const newNumbers = numbers.map(
-        () => "id=" + Math.round(Math.random() * max) + "&"
-      );
-      newNumbers.unshift(`http://localhost:3000/data?`);
-
-      return newNumbers.join("").slice(0, -1);
-    };
     const getData = async () => {
       const dataLength = await axios(
         `http://localhost:3000/data?_page=1&_limit=1`
       ).then((res) => res.headers["x-total-count"]);
-      const newData = await fetcher(generateArray(7, dataLength));
-
-      setRandomData(newData);
+      setLength(dataLength);
+      if (length) {
+        const url = generateArray(length, 7);
+        const newData = await fetcher(url);
+        setRandomData(newData);
+      }
     };
+
     getData();
-  }, []);
+  }, [length]);
 
   return (
     <>
