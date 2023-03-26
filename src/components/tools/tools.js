@@ -47,6 +47,18 @@ export const borderColor = color => {
   }
 };
 
+// функция для получения массива случайных новостей
+export const getRandomArray = (length, max) => {
+  const randomArray = [];
+  while (randomArray.length < max) {
+    let randomNumber = Math.floor(Math.random() * length)
+    if (!randomArray.includes(randomNumber)) {
+      randomArray.push(randomNumber)
+    };
+  };
+  return randomArray;
+}
+
 //scrollHandler функция скролла
 
 export const scrollHandler = (e, data, total, state) => {

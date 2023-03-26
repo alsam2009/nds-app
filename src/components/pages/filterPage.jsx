@@ -18,7 +18,6 @@ const FilterPage = ({ name, color }) => {
 
   const getKey = (pageIndex = 1, previousPageData) => {
     if (previousPageData && !previousPageData.length) return null; // достигнут конец
-
     return `http://localhost:3000/data?${key}=${encodeURIComponent(
       filterQuery
     )}&_page=${pageIndex + 1}`;
@@ -43,7 +42,6 @@ const FilterPage = ({ name, color }) => {
         Загрузка...
       </div>
     );
-
   return (
     <div className="dark:bg-base-500">
       {typeof name !== "string" && (
@@ -57,13 +55,17 @@ const FilterPage = ({ name, color }) => {
       ) : (
         <Divider name={name[1]} color={color[1]} />
       )}
-
-      <ul className="container mx-auto grid grid-cols-5 gap-4 dark:bg-base-500">
+      {location.pathname = '/search' && data[0].length <= 0 &&
+      <div className="px-8 dark:text-base-300 dark:h-screen dark:bg-base-500">
+          <p >По вашему запросу ничего не найдено 🤷‍♀️</p>
+      </div>
+      }
+      <ul className="container mx-8 grid grid-cols-5 gap-4 dark:bg-base-500">
         {data.map((pageData) =>
           pageData.map((item) => <Card data={item} key={item.id} />)
         )}
       </ul>
-      <div className="p-10" ref={ref}></div>
+      <div className="py-9" ref={ref}></div>
     </div>
   );
 };

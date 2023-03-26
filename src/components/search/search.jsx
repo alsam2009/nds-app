@@ -1,18 +1,22 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-//import DataContex from "../dataContex";
 
 const Search = () => {
-  // const { setGlobalData } = useContext(DataContex);
   const [query, setQuery] = useState("");
 
   const handleChange = (e) => {
     setQuery(e.target.value);
   };
 
+  const handleKeyPress = (e) => {
+    if (e.key === 'Enter' && query.length > 0) {
+      window.location.href = `/search?filter=${query}`;;
+    }
+  };
+
   return (
     <>
-      <div className="search flex bg-color-550 dark:bg-base-600">
+      <div className="search flex bg-color-550  dark:bg-base-600">
         <input
           className="font-search mr-2 h-6 rounded bg-base-200 pl-2 text-sm focus:bg-base-100 focus:outline-none"
           type="search"
@@ -20,6 +24,7 @@ const Search = () => {
           placeholder="Найти"
           value={query}
           onChange={handleChange}
+          onKeyUp={handleKeyPress}
         />
         {query.length > 0 ? (
           <Link to={`/search?filter=${query}`}>
