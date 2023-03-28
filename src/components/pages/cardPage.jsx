@@ -2,6 +2,7 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 import useSWR from 'swr';
 import { fetcher } from '../tools/fetcher';
+import {ReactComponent as Loader } from '../../images/loader2.svg'
 
 const CardPage = () => {
   const { id } = useParams();
@@ -14,7 +15,10 @@ const CardPage = () => {
   console.log(data)
 
   if (error) return <div>Ошибка загрузки</div>;
-  if (isLoading) return <div>Загрузка...</div>;
+  if (isLoading) return
+  <div className="w-full  h-screen flex justify-center items-center dark:bg-base-500 dark:text-base-400">
+    <Loader fill="rgb(167,165,165)" stroke="" width={70} />
+      </div>;
 
   return (
     data && (

@@ -6,6 +6,7 @@ import Card from "../card/card";
 import { fetcher } from "../tools/fetcher";
 import Divider from "../divider/Divider";
 import ImportantSection from "../ImportantSection/ImportantSection";
+import {ReactComponent as Loader } from '../../images/loader2.svg'
 
 const FilterPage = ({ name, color }) => {
   const { ref, inView } = useInView({
@@ -38,8 +39,8 @@ const FilterPage = ({ name, color }) => {
 
   if (!data)
     return (
-      <div className="dark:h-screen dark:bg-base-500 dark:text-base-400">
-        Загрузка...
+      <div className="w-full  h-screen flex justify-center items-center dark:bg-base-500 dark:text-base-400">
+        <Loader fill="rgb(48,48,48)" stroke="" width={50} />
       </div>
     );
   return (
