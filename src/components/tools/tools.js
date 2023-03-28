@@ -30,20 +30,20 @@ export const getColorTag = (val) => {
 };
 
 // выбор цвета границы Divider
-export const borderColor = color => {
+export const borderColor = (color) => {
   switch (color) {
-    case 'color-150':
-      return 'border-color-150';
-    case 'color-650':
-      return 'border-color-650';
-    case 'color-800':
-      return 'border-color-800';
-    case 'color-550':
-      return 'border-color-550';
-    case 'color-350':
-      return 'border-color-350';
+    case "color-150":
+      return "border-color-150";
+    case "color-650":
+      return "border-color-650";
+    case "color-800":
+      return "border-color-800";
+    case "color-550":
+      return "border-color-550";
+    case "color-350":
+      return "border-color-350";
     default:
-      return 'border-color-750';
+      return "border-color-750";
   }
 };
 
@@ -71,4 +71,29 @@ export const truncateSentence = (sentence, symb = 55) => {
     sentence = sentence.trim() + "...";
   }
   return sentence;
+};
+
+//Генерирует случайные числа для массива
+export const getRandomArray = (length, max) => {
+  const randomArray = [];
+  while (randomArray.length < max) {
+    let randomNumber = Math.floor(Math.random() * length);
+    if (
+      !randomArray.includes(
+        randomNumber === 0 ? randomNumber + 1 : randomNumber
+      )
+    ) {
+      randomArray.push(randomNumber);
+    }
+  }
+  return randomArray;
+};
+
+//Скролл на верх страницы
+export const scrollTop = () => {
+  window.scrollTo({
+    top: 0,
+    left: 0,
+    behavior: "smooth",
+  });
 };

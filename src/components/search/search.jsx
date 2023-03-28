@@ -1,28 +1,38 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
-//import DataContex from "../dataContex";
+import React, { useRef, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 
 const Search = () => {
-  // const { setGlobalData } = useContext(DataContex);
   const [query, setQuery] = useState("");
-
+  const navigate = useNavigate();
+  const ref = useRef();
   const handleChange = (e) => {
     setQuery(e.target.value);
   };
 
+  const handleKeyPress = (e) => {
+    if (e.key === "Enter" && query.length > 0) {
+      navigate(`/search?filter=${query}`);
+    }
+  };
+
   return (
     <>
-      <div className="search flex bg-color-550 dark:bg-base-600">
+      <div className="search flex bg-color-550  dark:bg-base-600">
         <input
+          ref={ref}
           className="font-search mr-2 h-6 rounded bg-base-200 pl-2 text-sm focus:bg-base-100 focus:outline-none"
           type="search"
           name="search"
           placeholder="Найти"
           value={query}
           onChange={handleChange}
+          onKeyUp={handleKeyPress}
         />
         {query.length > 0 ? (
-          <Link to={`/search?filter=${query}`}>
+          <Link
+            to={`/search?filter=${query}`}
+            onClick={() => (ref.current.value = "")}
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"

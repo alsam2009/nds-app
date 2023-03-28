@@ -2,17 +2,18 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { fetcher } from "../tools/fetcher";
-import _ from "lodash";
+import { getRandomArray } from "../tools/tools";
 
 const TopNews = () => {
   const [randomData, setRandomData] = useState([]);
   const [length, setLength] = useState();
 
-  const generateArray = (length, max) => {
-    const numbers = _.shuffle(_.range(1, length)).slice(0, max);
-    const newNumbers = numbers.map((item) => "id=" + item + "&");
-
-    return "http://localhost:3000/data?" + newNumbers.join("").slice(0, -1);
+  const getRandomNewsLink = (length, max) => {
+    const randomNewsId = getRandomArray(length, max).reduce(
+      (acc, item) => acc + item + "&id=",
+      "id="
+    );
+    return `http://localhost:3000/data?` + randomNewsId.slice(0, -4);
   };
 
   useEffect(() => {
@@ -21,9 +22,9 @@ const TopNews = () => {
         `http://localhost:3000/data?_page=1&_limit=1`
       ).then((res) => res.headers["x-total-count"]);
       setLength(dataLength);
+
       if (length) {
-        const url = generateArray(length, 7);
-        const newData = await fetcher(url);
+        const newData = await fetcher(getRandomNewsLink(dataLength, 9));
         setRandomData(newData);
       }
     };
@@ -33,8 +34,8 @@ const TopNews = () => {
 
   return (
     <>
-      <div className="flex w-full flex-col  bg-base-200 shadow-md">
-        <div className="flex h-10 items-center justify-start border-b-2 border-base-400 bg-base-300 p-1.5 text-base-500">
+      <div className="flex h-[518px] w-full flex-col bg-base-200 shadow-md dark:bg-base-500 dark:shadow-2xl">
+        <div className="flex h-10 items-center justify-start border-b-2 border-base-400 bg-base-300 p-1.5 text-base-500 dark:border-none dark:bg-base-600/50 dark:text-base-300">
           <p>
             <b>ТОП </b>
           </p>
@@ -44,17 +45,17 @@ const TopNews = () => {
           randomData.map((item, i) => (
             <div
               key={i}
-              className="flex border-b-2 border-base-300 p-1.5 text-sm underline"
+              className="flex h-14 w-full items-center border-b-2 border-base-300 pl-1.5 text-sm leading-4 transition duration-300 hover:bg-base-400 dark:border-base-400/50 dark:text-base-300"
             >
+              <span>🔊</span>
               <Link
                 to={`/card/${item.id}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className=" cursor-pointer truncate "
+                className=" cursor-pointer  pl-2"
               >
                 {item.title}
               </Link>
-              <span>&rarr;</span>
             </div>
           ))}
       </div>
