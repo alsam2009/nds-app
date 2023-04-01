@@ -13,7 +13,7 @@ const CurrencyInfo = () => {
         setDollarData(currency.USD)
         setEuroData(currency.EUR)
       })
-  }, [apiCurrencyURL])
+  }, [])
 
   if (!dollarData) return null
   // console.log(dollarData, euroData)
@@ -38,7 +38,7 @@ const CurrencyInfo = () => {
             {' '}▲
           </span>
         ) : (
-          <span className='text-color-150'> ▼</span>
+          <span className='text-color-150'></span>
         )}
       </div>
     </div>
