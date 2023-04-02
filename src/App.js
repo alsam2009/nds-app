@@ -12,7 +12,7 @@ function App() {
     <>
       <AdditionalBar />
       <Menu />
-      <Routes>
+      <Routes >
         <Route path="/" exact element={<FilterPage name={["Важное", "Все новости"]} color={["color-150", "color-550"]} />} />
         <Route path="/card/:id" element={<CardPage />} />
         <Route path="/important/" element={<FilterPage name="Важное" color="color-150" />} />

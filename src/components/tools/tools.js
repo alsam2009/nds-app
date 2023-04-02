@@ -1,36 +1,36 @@
-import { navbar } from "../../nds.config";
+import { navbar } from '../../nds.config';
 //formate Date форматирование даты
 export const formatDate = (dateString) => {
   const date = new Date(dateString);
-  const options = { year: "numeric", month: "long", day: "numeric" };
-  return date.toLocaleDateString("ru-RU", options);
+  const options = { year: 'numeric', month: 'long', day: 'numeric' };
+  return date.toLocaleDateString('ru-RU', options);
 };
 
 //colorsTags вывод определенного класса для цвета *navbar берез из импорта
 export const getColorTag = (val) => {
   switch (val) {
     case navbar[1]:
-      return { baseClass: "bg-color-150", otherClass: "bg-color-190" };
+      return { baseClass: 'bg-color-150', otherClass: 'bg-color-190' };
 
     case navbar[2]:
-      return { baseClass: "bg-color-650", otherClass: "bg-color-690" };
+      return { baseClass: 'bg-color-650', otherClass: 'bg-color-690' };
 
     case navbar[3]:
-      return { baseClass: "bg-color-800", otherClass: "bg-color-850" };
+      return { baseClass: 'bg-color-800', otherClass: 'bg-color-850' };
 
     case navbar[4]:
-      return { baseClass: "bg-color-550", otherClass: "bg-color-590" };
+      return { baseClass: 'bg-color-550', otherClass: 'bg-color-590' };
 
     case navbar[5]:
-      return { baseClass: "bg-color-350", otherClass: "bg-color-390" };
+      return { baseClass: 'bg-color-350', otherClass: 'bg-color-390' };
 
     default:
-      return { baseClass: "bg-base-400", otherClass: "bg-base-500" };
+      return { baseClass: 'bg-base-400', otherClass: 'bg-base-500' };
   }
 };
 
 // выбор цвета границы Divider
-export const borderColor = color => {
+export const borderColor = (color) => {
   switch (color) {
     case 'color-150':
       return 'border-color-150';
@@ -47,17 +47,21 @@ export const borderColor = color => {
   }
 };
 
-// функция для получения массива случайных новостей
+//Генерирует случайные числа для массива
 export const getRandomArray = (length, max) => {
   const randomArray = [];
   while (randomArray.length < max) {
-    let randomNumber = Math.floor(Math.random() * length)
-    if (!randomArray.includes(randomNumber)) {
-      randomArray.push(randomNumber)
-    };
-  };
+    let randomNumber = Math.round(Math.random() * length);
+    if (
+      !randomArray.includes(
+        randomNumber === 0 ? randomNumber + 1 : randomNumber
+      )
+    ) {
+      randomArray.push(randomNumber);
+    }
+  }
   return randomArray;
-}
+};
 
 //scrollHandler функция скролла
 
@@ -78,9 +82,9 @@ export const truncateSentence = (sentence, symb = 55) => {
     sentence = sentence.substring(0, symb);
     sentence = sentence.substring(
       0,
-      Math.min(sentence.length, sentence.lastIndexOf(" "))
+      Math.min(sentence.length, sentence.lastIndexOf(' '))
     );
-    sentence = sentence.trim() + "...";
+    sentence = sentence.trim() + '...';
   }
   return sentence;
 };

@@ -2,11 +2,11 @@ import React, { useEffect } from "react";
 import { useSearchParams, useLocation } from "react-router-dom";
 import { useInView } from "react-intersection-observer";
 import useSWRInfinite from "swr/infinite";
-import Card from "../card/card";
-import { fetcher } from "../tools/fetcher";
+import {ReactComponent as Loader } from '../../images/loader2.svg'
+import Card from "../card/Сard";
 import Divider from "../divider/Divider";
 import ImportantSection from "../ImportantSection/ImportantSection";
-import {ReactComponent as Loader } from '../../images/loader2.svg'
+import { fetcher } from "../tools/fetcher";
 
 const FilterPage = ({ name, color }) => {
   const { ref, inView } = useInView({
@@ -26,16 +26,21 @@ const FilterPage = ({ name, color }) => {
 
   const { data, error, size, setSize } = useSWRInfinite(getKey, fetcher);
 
-  const isLoadingInitialData = !data && !error; // если данные еще не получены, выводим сообщение об загрузке
+  const isLoadingInitialData = !data && !error;
   const isLoadingMore =
     isLoadingInitialData ||
-    (size > 0 && data && typeof data[size - 1] === "undefined"); // если данные загружаются, скрываем кнопку "загрузить еще"
+    (size > 0 && data && typeof data[size - 1] === "undefined");
+
+    useEffect(() => {
+      window.scrollTo(0, 0);
+    }, [location.pathname]);
 
   useEffect(() => {
     if (inView && !isLoadingMore) {
       setSize(size + 1);
     }
   }, [inView, size, isLoadingMore, setSize]);
+
 
   if (!data)
     return (
@@ -56,7 +61,7 @@ const FilterPage = ({ name, color }) => {
       ) : (
         <Divider name={name[1]} color={color[1]} />
       )}
-      {location.pathname = '/search' && data[0].length <= 0 &&
+      {location.pathname === '/search' && data[0].length <= 0 &&
       <div className="px-8 dark:text-base-300 dark:h-screen dark:bg-base-500">
           <p >По вашему запросу ничего не найдено 🤷‍♀️</p>
       </div>

@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import tagIcon from '../../images/tag-icon.svg';
 
 import { formatDate, getColorTag, truncateSentence } from '../tools/tools';
+import { memo } from 'react';
 
 const Card = ({ data }) => {
   const { id, title, publication_date, tag_article, image_url } = data;
@@ -48,4 +49,4 @@ const Card = ({ data }) => {
   );
 };
 
-export default Card;
+export default memo(Card);
