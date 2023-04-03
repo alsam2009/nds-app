@@ -14,7 +14,7 @@ const CurrencyInfo = () => {
         setDollarData(currency.USD)
         setEuroData(currency.EUR)
       })
-  }, [apiCurrencyURL])
+  })
   if (!dollarData) return null;
 
   return (

@@ -1,22 +1,39 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import ImportantNewsSmall from './ImportantNewsSmall';
+import axios from 'axios';
 import TopNews from '../topNews/topNews';
-import "../../App.css"
+import '../../App.css';
+import Advertisement from './Advertisement';
+import ImportantNewsSlider from './ImportantNewsSlider';
 
 const ImportantSection = () => {
+  const [importantNewsSliderArray, setImportantNewsSliderArray] = useState([]);
+  const [importantNewsSmallArray, setimportantNewsSmallArray] = useState([]);
+
+  useEffect(() => {
+    const getData = async () => {
+      axios
+        .get('http://localhost:3000/data?tag_article=Важное', {
+          params: {
+            _page: 1,
+            _limit: 9,
+          },
+        })
+        .then((res) => {
+          setImportantNewsSliderArray(res.data.splice(0, 5));
+          setimportantNewsSmallArray(res.data);
+        });
+    };
+    getData();
+  }, []);
   return (
     <section className='main_block flex px-8'>
-      <div className='important_news flex w-8/12 flex-col pr-10 dark:text-base-400'>
-        ВАЖНЫЕ НОВОСТИ
-        {/* {<ImportantNews/>} */}
+      <div className='important_news flex w-8/12 flex-col pr-10 dark:text-base-300'>
+        <ImportantNewsSlider data={importantNewsSliderArray} />
+        <ImportantNewsSmall data={importantNewsSmallArray} />
       </div>
       <div className='popular_news flex w-4/12 flex-col'>
-        <div className='mb-4 flex flex-col min-h-[192px] items-center justify-center bg-base-600 dark:bg-base-600/50 text-3xl text-white advertisment'>
-          <span className="mt-4 text-4xl font-bold bg-gradient-to-r from-color-690 via-amber-400 to-color-890 bg-clip-text text-transparent">WANNA NEWS SITE?</span>
-          <span className="my-4 text-3xl font-bold text-base-300 underline tracking-wide">CALL! +7 999 99 99</span>
-          <span className='cursor-pointer bg-gradient-to-r from-color-690 to-color-890 bg-clip-text text-lg font-extrabold tracking-widest text-transparent'>
-         {"{"} NEWS DELIVERY SYSTEM {"}"}
-        </span>
-        </div>
+        <Advertisement />
         <TopNews />
       </div>
     </section>

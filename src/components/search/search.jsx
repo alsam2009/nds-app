@@ -4,7 +4,6 @@ import { Link, useNavigate } from "react-router-dom";
 const Search = () => {
   const [query, setQuery] = useState("");
   const navigate = useNavigate();
-  // const ref = useRef();
 
   const handleChange = (e) => {
     setQuery(e.target.value);
@@ -21,7 +20,6 @@ const Search = () => {
     <>
       <div className="search flex bg-color-550  dark:bg-base-600">
         <input
-          // ref={ref}
           className="font-search mr-2 h-6 rounded bg-base-200 pl-2 text-sm focus:bg-base-100 focus:outline-none"
           type="search"
           name="search"
