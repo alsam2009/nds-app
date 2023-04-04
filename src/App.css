@@ -1,37 +1,30 @@
-.App {
-  text-align: center;
+.advertisment {
+  --border-size: 3px;
+  --border-angle: 0turn;
+  background-image: conic-gradient(from var(--border-angle), #213, #112 50%, #213), conic-gradient(from var(--border-angle), transparent 20%, #08f, rgb(189, 18, 18));
+  background-size: calc(100% - (var(--border-size) * 2)) calc(100% - (var(--border-size) * 2)), cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  -webkit-animation: bg-spin 3s linear infinite;
+          animation: bg-spin 3s linear infinite;
+}
+@-webkit-keyframes bg-spin {
+  to {
+    --border-angle: 1turn;
+  }
+}
+@keyframes bg-spin {
+  to {
+    --border-angle: 1turn;
+  }
+}
+.advertisment:hover {
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+@property --border-angle {
+  syntax: "<angle>";
+  inherits: true;
+  initial-value: 0turn;
 }
-
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #3d5ff3;
-}
-
-/* .App-news {
-  color:crimson;
-} */
-
-.App-delivery {
-  color:darkorange;
-}
-
-.App-system {
-  color:chartreuse;
-}
-

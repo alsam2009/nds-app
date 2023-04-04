@@ -13,14 +13,41 @@ function App() {
       <AdditionalBar />
       <Menu />
       <Routes>
-        <Route path="/" exact element={<FilterPage name={["Важное", "Все новости"]} color={["color-150", "color-550"]} />} />
+        <Route
+          path="/"
+          exact
+          element={
+            <FilterPage
+              name={["Важное", "Все новости"]}
+              color={["color-150", "color-550"]}
+            />
+          }
+        />
         <Route path="/card/:id" element={<CardPage />} />
-        <Route path="/important/" element={<FilterPage name="Важное" color="color-150" />} />
-        <Route path="/novelty/" element={<FilterPage name="Новинки" color="color-650"/>} />
-        <Route path="/survey/" element={<FilterPage name="Обзоры" color="color-800"/>} />
-        <Route path="/interesting/" element={<FilterPage name="Интересно" color="color-350"/>} />
-        <Route path="/events/" element={<FilterPage name="Мероприятия" color="color-550"/>} />
-        <Route path="/search/" element={<FilterPage name="Поиск" color="color-550"/>} />
+        <Route
+          path="/important/"
+          element={<FilterPage name="Важное" color="color-150" />}
+        />
+        <Route
+          path="/novelty/"
+          element={<FilterPage name="Новинки" color="color-650" />}
+        />
+        <Route
+          path="/survey/"
+          element={<FilterPage name="Обзоры" color="color-800" />}
+        />
+        <Route
+          path="/interesting/"
+          element={<FilterPage name="Интересно" color="color-350" />}
+        />
+        <Route
+          path="/events/"
+          element={<FilterPage name="Мероприятия" color="color-550" />}
+        />
+        <Route
+          path="/search/"
+          element={<FilterPage name="Поиск" color="color-550" />}
+        />
         <Route path="*" element={<NonFoundPage />} />
       </Routes>
     </>

@@ -1,8 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
 import tagIcon from "../../images/tag-icon.svg";
-
 import { formatDate, getColorTag, truncateSentence } from "../tools/tools";
 
 const Card = ({ data }) => {
@@ -11,7 +9,7 @@ const Card = ({ data }) => {
 
   return (
     <Link to={`/card/${id}`} target="_blank" rel="noopener noreferrer">
-      <div className="flex h-[416px]  max-w-xs flex-col bg-base-100 px-0 shadow-md hover:bg-base-300 dark:bg-base-500 dark:shadow-2xl dark:hover:bg-base-400">
+      <div className="flex h-[416px]  max-w-xs flex-col bg-base-100 px-0 shadow-md dark:bg-base-500 dark:shadow-2xl">
         <div className="relative">
           <div
             className={
@@ -32,7 +30,7 @@ const Card = ({ data }) => {
           />
         </div>
         <div className="grow p-[20px]">
-          <h2 className="text-lg font-medium underline dark:text-base-300 ">
+          <h2 className="text-lg font-medium underline dark:text-base-300">
             {truncateSentence(title)}
           </h2>
         </div>
@@ -48,4 +46,4 @@ const Card = ({ data }) => {
   );
 };
 
-export default Card;
+export default React.memo(Card);

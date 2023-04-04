@@ -2,10 +2,11 @@ import React, { useEffect } from "react";
 import { useSearchParams, useLocation } from "react-router-dom";
 import { useInView } from "react-intersection-observer";
 import useSWRInfinite from "swr/infinite";
-import Card from "../card/card";
-import { fetcher } from "../tools/fetcher";
+import { ReactComponent as Loader } from "../../images/loader2.svg";
+import Card from "../card/Сard";
 import Divider from "../divider/Divider";
 import ImportantSection from "../ImportantSection/ImportantSection";
+import { fetcher } from "../tools/fetcher";
 
 const FilterPage = ({ name, color }) => {
   const { ref, inView } = useInView({
@@ -25,10 +26,14 @@ const FilterPage = ({ name, color }) => {
 
   const { data, error, size, setSize } = useSWRInfinite(getKey, fetcher);
 
-  const isLoadingInitialData = !data && !error; // если данные еще не получены, выводим сообщение об загрузке
+  const isLoadingInitialData = !data && !error;
   const isLoadingMore =
     isLoadingInitialData ||
-    (size > 0 && data && typeof data[size - 1] === "undefined"); // если данные загружаются, скрываем кнопку "загрузить еще"
+    (size > 0 && data && typeof data[size - 1] === "undefined");
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
 
   useEffect(() => {
     if (inView && !isLoadingMore) {
@@ -38,8 +43,8 @@ const FilterPage = ({ name, color }) => {
 
   if (!data)
     return (
-      <div className="dark:h-screen dark:bg-base-500 dark:text-base-400">
-        Загрузка...
+      <div className="flex  h-screen w-full items-center justify-center dark:bg-base-500 dark:text-base-400">
+        <Loader fill="rgb(48,48,48)" stroke="" width={50} />
       </div>
     );
   return (
@@ -55,18 +60,15 @@ const FilterPage = ({ name, color }) => {
       ) : (
         <Divider name={name[1]} color={color[1]} />
       )}
-      {
-        (location.pathname = "/search" && data[0].length <= 0 && (
-          <div className="px-8 dark:h-screen dark:bg-base-500 dark:text-base-300">
-            <p>По вашему запросу ничего не найдено 🤷‍♀️</p>
-          </div>
-        ))
-      }
-      <ul className="container mx-auto grid grid-cols-5 gap-4 dark:bg-base-500">
-        {data &&
-          data.map((pageData) =>
-            pageData.map((item) => <Card data={item} key={item.id} />)
-          )}
+      {location.pathname === "/search" && data[0].length <= 0 && (
+        <div className="px-8 dark:h-screen dark:bg-base-500 dark:text-base-300">
+          <p>По вашему запросу ничего не найдено 🤷‍♀️</p>
+        </div>
+      )}
+      <ul className="container mx-8 grid grid-cols-5 gap-4 dark:bg-base-500">
+        {data.map((pageData) =>
+          pageData.map((item) => <Card data={item} key={item.id} />)
+        )}
       </ul>
       <div className="py-9" ref={ref}></div>
     </div>

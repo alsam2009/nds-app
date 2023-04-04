@@ -4,6 +4,9 @@ module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
+      animation: {
+        fadeIn: "fadeIn 1s ease",
+      },
       fontFamily: {
         sans: ["Montserrat"],
         serif: ["sans serif"],
@@ -46,6 +49,12 @@ module.exports = {
           800: "#A538FA",
           850: "#7306C8",
           890: "#48029D",
+        },
+      },
+      keyframes: {
+        fadeIn: {
+          from: { opacity: 0 },
+          to: { opacity: 1 },
         },
       },
     },
