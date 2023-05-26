@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import tagIcon from '../../images/tag-icon.svg';
+import { FaRegHeart } from "react-icons/fa";
 import { formatDate, getColorTag, truncateSentence } from '../tools/tools';
 
 const Card = ({ data }) => {
@@ -39,6 +40,7 @@ const Card = ({ data }) => {
             <p className='text-xs text-base-400 dark:text-base-300'>
               {formatDate(publication_date)}
             </p>
+            <FaRegHeart  className='text-base text-base-400 dark:text-base-300'/>
           </div>
         </div>
       </div>

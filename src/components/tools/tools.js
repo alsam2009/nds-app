@@ -6,7 +6,7 @@ export const formatDate = (dateString) => {
   return date.toLocaleDateString('ru-RU', options);
 };
 
-//colorsTags вывод определенного класса для цвета *navbar берез из импорта
+//colorsTags вывод определенного класса для цвета *navbar береn из импорта
 export const getColorTag = (val) => {
   switch (val) {
     case navbar[1]:

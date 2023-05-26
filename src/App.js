@@ -1,29 +1,59 @@
-import React from "react";
-import { Route, Routes } from "react-router-dom";
-import "./App.css";
-import NonFoundPage from "./components/pages/404";
-import CardPage from "./components/pages/cardPage";
-import FilterPage from "./components/pages/filterPage";
-import AdditionalBar from "./components/AdditionalBar/AdditionalBar";
-import Menu from "./components/menu/menu";
+import React from 'react';
+import { Route, Routes } from 'react-router-dom';
+import './App.css';
+import {
+  NonFoundPage,
+  CardPage,
+  FilterPage,
+  AdditionalBar,
+  Menu,
+} from './components/components';
+import { navbar, colors } from './nds.config';
 
 function App() {
   return (
-    <>
+    <div className='mx-auto dark:bg-base-500 2xl:w-[1366px]'>
       <AdditionalBar />
       <Menu />
-      <Routes >
-        <Route path="/" exact element={<FilterPage name={["Важное", "Все новости"]} color={["color-150", "color-550"]} />} />
-        <Route path="/card/:id" element={<CardPage />} />
-        <Route path="/important/" element={<FilterPage name="Важное" color="color-150" />} />
-        <Route path="/novelty/" element={<FilterPage name="Новинки" color="color-650"/>} />
-        <Route path="/survey/" element={<FilterPage name="Обзоры" color="color-800"/>} />
-        <Route path="/interesting/" element={<FilterPage name="Интересно" color="color-350"/>} />
-        <Route path="/events/" element={<FilterPage name="Мероприятия" color="color-550"/>} />
-        <Route path="/search/" element={<FilterPage name="Поиск" color="color-550"/>} />
-        <Route path="*" element={<NonFoundPage />} />
+      <Routes>
+        <Route
+          path='/'
+          exact
+          element={
+            <FilterPage
+              name={[navbar[1], navbar[6]]}
+              color={[colors[1], colors[5]]}
+            />
+          }
+        />
+        <Route path='/card/:id' element={<CardPage />} />
+        <Route
+          path='/important/'
+          element={<FilterPage name={navbar[1]} color={colors[1]} />}
+        />
+        <Route
+          path='/novelty/'
+          element={<FilterPage name={navbar[2]} color={colors[2]} />}
+        />
+        <Route
+          path='/survey/'
+          element={<FilterPage name={navbar[3]} color={colors[3]} />}
+        />
+        <Route
+          path='/interesting/'
+          element={<FilterPage name={navbar[4]} color={colors[4]} />}
+        />
+        <Route
+          path='/events/'
+          element={<FilterPage name={navbar[5]} color={colors[5]} />}
+        />
+        <Route
+          path='/search/'
+          element={<FilterPage name={navbar[7]} color={colors[5]} />}
+        />
+        <Route path='*' element={<NonFoundPage />} />
       </Routes>
-    </>
+    </div>
   );
 }
 

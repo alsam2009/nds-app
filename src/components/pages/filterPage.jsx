@@ -3,9 +3,7 @@ import { useSearchParams, useLocation } from "react-router-dom";
 import { useInView } from "react-intersection-observer";
 import useSWRInfinite from "swr/infinite";
 import {ReactComponent as Loader } from '../../images/loader2.svg'
-import Card from "../card/Сard";
-import Divider from "../divider/Divider";
-import ImportantSection from "../ImportantSection/ImportantSection";
+import { Card, Divider, ImportantSection } from "../components";
 import { fetcher } from "../tools/fetcher";
 
 const FilterPage = ({ name, color }) => {
@@ -66,7 +64,7 @@ const FilterPage = ({ name, color }) => {
           <p >По вашему запросу ничего не найдено 🤷‍♀️</p>
       </div>
       }
-      <ul className="container mx-8 grid grid-cols-5 gap-4 dark:bg-base-500">
+      <ul className="container px-8 grid grid-cols-5 gap-4 dark:bg-base-500">
         {data.map((pageData) =>
           pageData.map((item) => <Card data={item} key={item.id} />)
         )}

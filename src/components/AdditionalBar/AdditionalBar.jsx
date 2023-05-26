@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import CurrencyInfo from './СurrencyInfo';
 import Logo from '../../images/logo.png'
+import { FaHeart } from "react-icons/fa";
 
 const AdditionalBar = () => {
   function useDarkMode() {
@@ -35,8 +36,9 @@ const AdditionalBar = () => {
         </span>
       </div>
 
-      <div className='flex w-72 items-center dark:bg-base-500'>
-        <button className='text-sm'>
+      <div className='flex w-80 items-center dark:bg-base-500'>
+        <FaHeart className='h-5 w-5 cursor-pointer text-base-100 mr-3'/>
+        <button   className='text-sm'>
           {colorTheme === 'light' ? (
             <svg
               onClick={() => setTheme('light')}
@@ -49,7 +51,7 @@ const AdditionalBar = () => {
               strokeWidth='1'
               strokeLinecap='round'
               strokeLinejoin='miter'
-              className='h-5 w-5 cursor-pointer text-base-100 hover:text-color-150'
+              className='h-5 w-5  mr-2 cursor-pointer text-base-100 hover:text-color-150'
             >
               <circle
                 cx='12'

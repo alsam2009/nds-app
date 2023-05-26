@@ -3,6 +3,13 @@ module.exports = {
   darkMode: 'class',
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
+    screens: {
+      '2xl': {'min': '1352px'},
+      'xl': {'max': '1279px'},
+      'lg': {'max': '1023px'},
+      'md': {'max': '767px'},
+      'sm': {'max': '480px'},
+    },
     extend: {
       animation: {
         fadeIn: 'fadeIn 1s ease',
@@ -57,8 +64,7 @@ module.exports = {
           to: {opacity: 1},
         },
       },
-
     },
-    plugins: [],
   },
-};
+  plugins: [],
+}

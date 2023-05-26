@@ -2,7 +2,6 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { fetcher } from '../tools/fetcher';
-// import _ from "lodash";
 import  {getRandomArray} from "../tools/tools"
 
 

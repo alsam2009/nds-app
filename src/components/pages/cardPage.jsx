@@ -12,7 +12,7 @@ const CardPage = () => {
     fetcher
   );
 
-  console.log(data)
+  // console.log(data)
 
   if (error) return <div>Ошибка загрузки</div>;
   if (isLoading) return

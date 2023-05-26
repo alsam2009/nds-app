@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import ImportantNewsSmall from './ImportantNewsSmall';
-import axios from 'axios';
-import TopNews from '../topNews/topNews';
 import '../../App.css';
-import Advertisement from './Advertisement';
-import ImportantNewsSlider from './ImportantNewsSlider';
 
+import {
+  TopNews,
+  Advertisement,
+  ImportantNewsSlider,
+  ImportantNewsSmall,
+} from '../components';
+
+import axios from 'axios';
 const ImportantSection = () => {
   const [importantNewsSliderArray, setImportantNewsSliderArray] = useState([]);
   const [importantNewsSmallArray, setimportantNewsSmallArray] = useState([]);
