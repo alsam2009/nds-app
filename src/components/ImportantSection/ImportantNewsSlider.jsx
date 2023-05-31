@@ -28,14 +28,14 @@ const ImportantNewsSlider = ({ data }) => {
 
   return (
     data.length > 0 && (
-      <>
+      <div className='relative mb-5 h-[465px] w-full'>
         <Link
           to={`/card/${data[currentSlide].id}`}
           target='_blank'
           rel='noopener noreferrer'
-          className='relative cursor-pointer'
+          className='cursor-pointer'
         >
-          <div className='mb-5 h-[465px] w-[855px] bg-clip-content pr-10'>
+          <div className='mb-5 h-[465px] w-full bg-clip-content'>
             <img
               src={data[currentSlide].image_url}
               className='h-[465px] w-full animate-fadeIn object-cover'
@@ -43,14 +43,14 @@ const ImportantNewsSlider = ({ data }) => {
             />
           </div>
           <div
-            className='absolute top-0 z-10 h-[465px] w-[855px] pr-10'
+            className='absolute top-0 z-10 h-[465px] w-full pr-10'
             style={{
               background:
                 'linear-gradient(180deg, rgba(73, 73, 73, 0) 34.38%, #050505 100%)',
               backgroundClip: 'content-box',
             }}
           ></div>
-          <div className='absolute top-0 z-20 flex w-[855px] translate-y-60 flex-col justify-start gap-5 bg-clip-content pr-20 pb-1 pl-5 text-base-100'>
+          <div className='absolute top-0 z-20 flex w-full translate-y-60 flex-col justify-start gap-5 bg-clip-content pr-20 pb-1 pl-5 text-base-100'>
             <h3 className='flex w-24 items-center justify-center border-2 border-color-150 p-1 leading-none'>
               ВАЖНОЕ
             </h3>
@@ -59,13 +59,13 @@ const ImportantNewsSlider = ({ data }) => {
             </p>
           </div>
         </Link>
-        <button className='absolute top-[50%] right-[14%] z-50 block -translate-x-80 cursor-pointer rounded-full bg-black/20 p-2 text-2xl text-white duration-500'>
+        <button className='absolute top-[35%] right-[-31%] z-40 block -translate-x-80 cursor-pointer rounded-full bg-black/20 p-2 text-2xl text-white duration-500'>
           <HiChevronRight onClick={goToNextSlide} />
         </button>
-        <button className='absolute top-[50%] left-[38px] z-50 block  cursor-pointer rounded-full bg-black/20 p-2 text-2xl text-white duration-500'>
+        <button className='absolute top-[35%] left-[2%] z-40 block  cursor-pointer rounded-full bg-black/20 p-2 text-2xl text-white duration-500'>
           <HiChevronLeft onClick={goToPrevSlide} />
         </button>
-      </>
+    </div>
     )
   );
 };

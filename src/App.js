@@ -12,7 +12,7 @@ import { navbar, colors } from './nds.config';
 
 function App() {
   return (
-    <div className='mx-auto dark:bg-base-500 2xl:w-[1366px]'>
+    <div className='mx-auto dark:bg-base-500 2xl:w-[1349px]'>
       <AdditionalBar />
       <Menu />
       <Routes>

@@ -11,7 +11,7 @@ const Menu = () => {
       : `"block px-4 py-2 mr-2 font-normal dark:hover:text-base-600 hover:bg-base-500 dark:hover:bg-base-400 hover:transition`;
 
   return (
-    <nav className="sticky top-0 z-10 bg-color-550 dark:bg-base-600 z-99">
+    <nav className="sticky top-0 z-50 bg-color-550 dark:bg-base-600 z-99">
       <div className="mx-8 flex w-auto items-center justify-between">
         <div className="text-md flex font-bold text-base-100 dark:text-base-300">
           <NavLink to="/" className={setActive}>

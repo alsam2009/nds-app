@@ -31,7 +31,7 @@ const ImportantSection = () => {
   }, []);
   return (
     <section className='main_block flex px-8'>
-      <div className='important_news flex w-8/12 flex-col pr-10 dark:text-base-300'>
+      <div className='important_news flex w-8/12 flex-col pr-10 dark:text-base-300 relative'>
         <ImportantNewsSlider data={importantNewsSliderArray} />
         <ImportantNewsSmall data={importantNewsSmallArray} />
       </div>
