@@ -28,41 +28,41 @@ const ImportantNewsSlider = ({ data }) => {
 
   return (
     data.length > 0 && (
-      <div className='relative mb-5 h-[465px] w-full'>
+      <div className='relative mb-5 lg:mb-2 sm:mb-0 max-h-[465px] sm:pb-0 w-full overflow-hidden'>
+        <div className='absolute top-[50%] sm:top-[45%] z-20 flex w-full flex-col justify-start gap-5 sm:mt-2 xl:gap-3 md:gap-2 sm:gap-1 pr-20 sm:pr-5 lg:pr-5 pb-1 pl-5 lg:text-sm md:text-xs sm:text-[8px] text-base-100 overflow-hidden'>
+            <h3 className='flex w-24 lg:w-20 md:w-[72px] sm:w-12 items-center justify-center border-2 border-color-150 p-1 leading-none'>
+              ВАЖНОЕ
+            </h3>
+            <p className='2xl:text-4xl xl:text-2xl xl:leading-7 lg:text-[17px] md:text-base lg:leading-6 sm:text-sm  sm:leading-4 text-4xl font-semibold underline dark:text-base-200'>
+              {data[currentSlide].title}
+            </p>
+        </div>
+
         <Link
           to={`/card/${data[currentSlide].id}`}
           target='_blank'
           rel='noopener noreferrer'
           className='cursor-pointer'
         >
-          <div className='mb-5 h-[465px] w-full bg-clip-content'>
+          <div className='mb-5 sm:mb-4 w-full h-full xl:max-h-[420px] lg:max-h-[280px] md:max-h-[248px] sm:max-h-[190px] max-h-[465px] overflow-hidden flex'>
             <img
               src={data[currentSlide].image_url}
-              className='h-[465px] w-full animate-fadeIn object-cover'
+              className='w-full h-auto animate-fadeIn object-cover z-0'
               alt='slide'
             />
           </div>
           <div
-            className='absolute top-0 z-10 h-[465px] w-full pr-10'
+            className='absolute h-[100vh] 2xl:h-[77vh] xl:h-[69vh] lg:h-[46vh] md:h-[56vh] sm:h-[42vh] top-0 left-0 z-10 w-full'
             style={{
               background:
-                'linear-gradient(180deg, rgba(73, 73, 73, 0) 34.38%, #050505 100%)',
-              backgroundClip: 'content-box',
+                'linear-gradient(180deg, rgba(73, 73, 73, 0) 34.38%, #050505)',
             }}
           ></div>
-          <div className='absolute top-0 z-20 flex w-full translate-y-60 flex-col justify-start gap-5 bg-clip-content pr-20 pb-1 pl-5 text-base-100'>
-            <h3 className='flex w-24 items-center justify-center border-2 border-color-150 p-1 leading-none'>
-              ВАЖНОЕ
-            </h3>
-            <p className='text-4xl font-semibold underline dark:text-base-200'>
-              {data[currentSlide].title}
-            </p>
-          </div>
         </Link>
-        <button className='absolute top-[35%] right-[-31%] z-40 block -translate-x-80 cursor-pointer rounded-full bg-black/20 p-2 text-2xl text-white duration-500'>
+        <button className={'absolute top-[35%] right-[2%] z-40 block cursor-pointer rounded-full bg-black/20 p-2 sm:p-1 text-2xl lg:text-base sm:text-sm text-white duration-500'}>
           <HiChevronRight onClick={goToNextSlide} />
         </button>
-        <button className='absolute top-[35%] left-[2%] z-40 block  cursor-pointer rounded-full bg-black/20 p-2 text-2xl text-white duration-500'>
+        <button className='absolute top-[35%] left-[2%] z-40 block  cursor-pointer rounded-full bg-black/20 p-2 sm:p-1 text-2xl lg:text-base sm:text-sm text-white duration-500'>
           <HiChevronLeft onClick={goToPrevSlide} />
         </button>
     </div>

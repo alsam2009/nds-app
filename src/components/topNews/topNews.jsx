@@ -29,7 +29,7 @@ const TopNews = () => {
   }, []);
 
   return (
-    <div className='flex h-[518px] w-full flex-col bg-base-200 shadow-md dark:bg-base-500 dark:shadow-2xl'>
+    <div className='flex h-[518px] sm:h-auto w-full flex-col bg-base-200 shadow-md dark:bg-base-500 dark:shadow-2xl'>
       <div className='flex h-10 items-center justify-start border-b-2 border-base-400 bg-base-300 p-1.5 text-base-500 dark:bg-base-600/50 dark:text-base-300 dark:border-none'>
         <p>
           <b>ТОП</b>
@@ -41,7 +41,7 @@ const TopNews = () => {
           <>
             <div
               key={i}
-              className='flex h-14 w-full items-center border-b-2 border-base-300 pl-1.5 text-sm leading-4 dark:border-base-400/50 dark:text-base-300'
+              className='flex h-14 w-full items-center border-b-2 border-base-300 pl-1.5 text-sm lg:text-xs md:text-[10px] leading-4  dark:border-base-400/50 dark:text-base-300 overflow-hidden text-ellipsis'
             >
               <span>🔊</span>
               <Link

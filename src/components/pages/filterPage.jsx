@@ -64,7 +64,7 @@ const FilterPage = ({ name, color }) => {
           <p >По вашему запросу ничего не найдено 🤷‍♀️</p>
       </div>
       }
-      <ul className="container px-8 grid grid-cols-5 gap-4 dark:bg-base-500">
+      <ul className="container px-8 md:px-4 grid grid-cols-5 lg:grid-cols-4 sm:grid-cols-2 gap-4 dark:bg-base-500">
         {data.map((pageData) =>
           pageData.map((item) => <Card data={item} key={item.id} />)
         )}

@@ -21,7 +21,7 @@ function App() {
           exact
           element={
             <FilterPage
-              name={[navbar[1], navbar[6]]}
+              name={[navbar[4], navbar[1]]}
               color={[colors[1], colors[5]]}
             />
           }
@@ -29,27 +29,27 @@ function App() {
         <Route path='/card/:id' element={<CardPage />} />
         <Route
           path='/important/'
-          element={<FilterPage name={navbar[1]} color={colors[1]} />}
+          element={<FilterPage name={navbar[4]} color={colors[1]} />}
         />
         <Route
           path='/novelty/'
-          element={<FilterPage name={navbar[2]} color={colors[2]} />}
+          element={<FilterPage name={navbar[5]} color={colors[2]} />}
         />
         <Route
           path='/survey/'
-          element={<FilterPage name={navbar[3]} color={colors[3]} />}
+          element={<FilterPage name={navbar[6]} color={colors[3]} />}
         />
         <Route
           path='/interesting/'
-          element={<FilterPage name={navbar[4]} color={colors[4]} />}
+          element={<FilterPage name={navbar[7]} color={colors[4]} />}
         />
         <Route
           path='/events/'
-          element={<FilterPage name={navbar[5]} color={colors[5]} />}
+          element={<FilterPage name={navbar[8]} color={colors[5]} />}
         />
         <Route
           path='/search/'
-          element={<FilterPage name={navbar[7]} color={colors[5]} />}
+          element={<FilterPage name={navbar[2]} color={colors[5]} />}
         />
         <Route path='*' element={<NonFoundPage />} />
       </Routes>

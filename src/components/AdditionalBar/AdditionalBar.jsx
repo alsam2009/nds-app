@@ -23,21 +23,24 @@ const AdditionalBar = () => {
   const [colorTheme, setTheme] = useDarkMode();
 
   return (
-    <div className='additional-info flex h-8 w-full items-center justify-between bg-base-500 pl-8'>
-      <div className='flex items-center w-60 text-base-300 '>
+    <div className='additional-info flex h-8 w-full items-center justify-between bg-base-500 pl-8 md:pl-4 sm:pl-1'>
+      <div className='flex items-center w-60 lg:w-36 md:hidden text-base-300 '>
         <img src={Logo} className="w-6 h-6 mr-1" alt="logo" />
         <p className='bg-gradient-to-r from-color-690 to-color-890 bg-clip-text text-lg font-bold text-transparent'>
           NDS
         </p>
       </div>
       <div className='w-full text-center text-white'>
-        <span className='cursor-pointer bg-gradient-to-r from-color-690 to-color-890 bg-clip-text text-xl font-extrabold tracking-widest text-transparent'>
+        <span className='cursor-pointer bg-gradient-to-r from-color-690 to-color-890 bg-clip-text text-xl lg:text-lg sm:text-xs font-extrabold tracking-widest text-transparent'>
           ВСЕ ПРО ДРОНЫ
         </span>
       </div>
 
-      <div className='flex w-80 items-center dark:bg-base-500'>
-        <FaHeart className='h-5 w-5 cursor-pointer text-base-100 mr-3'/>
+      <div className='flex w-80 sm:pr-2 items-center dark:bg-base-500'>
+        <div className='relative'>
+          <FaHeart fill="currentColor" className='h-5 w-5 sm:h-4 sm:w-4 cursor-pointer text-base-100 mr-3 sm:mr-2 icon hover:text-color-300' />
+          <span className='absolute -top-0.5 left-4 h-3 w-3 sm:h-4 sm:w-4 sm:rounded-none sm:top-0.5 sm:left-0 sm:bg-transparent sm:text-base-100 text-[8px] sm:text-[7px] text-center text-base-600 cursor-pointer font-bold rounded-full bg-white'>7</span>
+        </div>
         <button   className='text-sm'>
           {colorTheme === 'light' ? (
             <svg
@@ -92,7 +95,7 @@ const AdditionalBar = () => {
         </button>
         <CurrencyInfo />
       </div>
-      <div className='w-10'></div>
+      <div className='w-10 sm:hidden'></div>
     </div>
   );
 };

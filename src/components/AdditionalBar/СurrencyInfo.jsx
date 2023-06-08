@@ -18,23 +18,23 @@ const CurrencyInfo = () => {
   if (!dollarData) return null;
 
   return (
-    <div className="flex w-full justify-end gap-2 text-center">
-      <div className="text-base-300 dark:text-white">
+    <div className="flex w-full justify-end gap-2 text-center items-center">
+      <div className="text-base-300 leading-4 xl:text-sm sm:text-xs dark:text-white">
         <span className="text-color-350">$ </span>
         {dollarData.Value.toFixed(2).replace(".", ",")}
         {dollarData && dollarData.Value > dollarData.Previous ? (
-          <span className="text-color-550"> ▲</span>
+          <span className="text-color-550 sm:hidden"> ▲</span>
         ) : (
-          <span className="text-color-150"> ▼</span>
+          <span className="text-color-150 sm:hidden"> ▼</span>
         )}
       </div>
-      <div className="text-base-300 dark:text-white">
+      <div className="text-base-300 leading-4 xl:text-sm sm:text-xs dark:text-white">
         <span className="text-color-350">€ </span>
         {euroData.Value.toFixed(2).replace(".", ",")}
         {euroData && euroData.Value > euroData.Previous ? (
-          <span className="text-color-550"> ▲</span>
+          <span className="text-color-550 sm:hidden"> ▲</span>
         ) : (
-          <span className="text-color-150"> ▼</span>
+          <span className="text-color-150 sm:hidden"> ▼</span>
         )}
       </div>
     </div>

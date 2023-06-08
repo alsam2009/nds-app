@@ -10,17 +10,17 @@ const Card = ({ data }) => {
 
   return (
     <Link to={`/card/${id}`} target="_blank" rel="noopener noreferrer">
-      <div className='flex h-[416px]  max-w-xs flex-col bg-base-100 px-0 shadow-md dark:bg-base-500 dark:shadow-2xl'>
+      <div className='flex h-[416px]  max-w-xs flex-col bg-base-100 px-0 shadow-md dark:bg-base-500 dark:shadow-2xl overflow-hidden'>
         <div className='relative'>
           <div
             className={
-              `absolute top-0 left-[20px] flex items-center ` + baseClass
+              `absolute top-0 left-[20px] md:left-0 flex items-center ` + baseClass
             }
           >
-            <div className={otherClass + ' p-1.5'}>
+            <div className={otherClass + ' p-1.5 md:hidden'}>
               <img src={tagIcon} alt='tag-icon' />
             </div>
-            <div className='p-1.5 text-xs leading-none text-white'>
+            <div className='p-1.5 text-xs md:text-[10px] leading-none text-white'>
               {tag_article.toUpperCase()}
             </div>
           </div>
@@ -31,13 +31,13 @@ const Card = ({ data }) => {
           />
         </div>
         <div className='grow p-[20px]'>
-          <h2 className='text-lg font-medium underline dark:text-base-300'>
+          <h2 className='text-lg xl:text-base lg:text-sm font-medium underline dark:text-base-300'>
             {truncateSentence(title)}
           </h2>
         </div>
         <div className='mt-auto p-3'>
           <div className='flex items-center justify-between'>
-            <p className='text-xs text-base-400 dark:text-base-300'>
+            <p className='text-xs lg:text-[10px] text-base-400 dark:text-base-300'>
               {formatDate(publication_date)}
             </p>
             <FaRegHeart  className='text-base text-base-400 dark:text-base-300'/>

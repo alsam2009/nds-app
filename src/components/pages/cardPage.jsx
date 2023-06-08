@@ -29,17 +29,17 @@ const CardPage = () => {
             src={data.image_url}
             alt={data.title}
           />
-          <div className='py-5 pl-5 text-xl dark:bg-base-500 dark:text-base-100'>
-            <h2>{data.title}</h2>
-            <div className='pt-4 text-lg text-base-500 dark:bg-base-500 dark:text-base-400'>
+          <div className='py-5 pl-5 text-xl dark:bg-base-500 dark:text-base-100 '>
+            <h2 className='font-semibold md:text-base'>{data.title}</h2>
+            <div className='pt-4 text-lg text-base-500 dark:bg-base-500 dark:text-base-400 md:text-base'>
               {data.article_preview}
               <div className='pt-3 text-base-500 dark:bg-base-500 dark:text-base-400'>
-                Полную новость читайте по{' '}
+                Полную новость читайте {' '}
                 <a
-                  className='text-base-500 underline dark:bg-base-500 dark:text-color-100'
+                  className='text-color-100 underline dark:bg-base-500 dark:text-color-100 dark:hover:text-color-150 hover:text-color-150'
                   href={data.article_url}
                 >
-                  ссылке...
+                  здесь...
                 </a>
               </div>
             </div>

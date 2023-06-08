@@ -20,7 +20,7 @@ const Search = () => {
     <>
       <div className="search flex items-center bg-color-550  dark:bg-base-600">
         <input
-          className="font-search mr-2 h-6 rounded bg-base-200 pl-2 text-sm focus:bg-base-100 focus:outline-none"
+          className="font-search mr-2 h-6 rounded bg-base-200 pl-2 text-sm lg:text-xs focus:bg-base-100 focus:outline-none"
           type="search"
           name="search"
           placeholder="Найти"

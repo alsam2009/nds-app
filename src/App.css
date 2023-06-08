@@ -29,3 +29,12 @@
   initial-value: 0turn;
 }
 
+
+.icon > * {
+  fill: #EF4444;
+}
+
+.icon > *:hover {
+  fill: #BD1212;
+}
+

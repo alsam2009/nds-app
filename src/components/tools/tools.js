@@ -9,19 +9,19 @@ export const formatDate = (dateString) => {
 //colorsTags вывод определенного класса для цвета *navbar береn из импорта
 export const getColorTag = (val) => {
   switch (val) {
-    case navbar[1]:
+    case navbar[4]:
       return { baseClass: 'bg-color-150', otherClass: 'bg-color-190' };
 
-    case navbar[2]:
+    case navbar[5]:
       return { baseClass: 'bg-color-650', otherClass: 'bg-color-690' };
 
-    case navbar[3]:
+    case navbar[6]:
       return { baseClass: 'bg-color-800', otherClass: 'bg-color-850' };
 
-    case navbar[4]:
+    case navbar[7]:
       return { baseClass: 'bg-color-550', otherClass: 'bg-color-590' };
 
-    case navbar[5]:
+    case navbar[8]:
       return { baseClass: 'bg-color-350', otherClass: 'bg-color-390' };
 
     default:

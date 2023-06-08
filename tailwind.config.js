@@ -4,10 +4,10 @@ module.exports = {
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
     screens: {
-      '2xl': {'min': '1352px'},
-      'xl': {'max': '1279px'},
-      'lg': {'max': '1023px'},
-      'md': {'max': '767px'},
+      '2xl': {'min': '1280px'},
+      'xl': {'max': '1280px'},
+      'lg': {'max': '1024px'},
+      'md': {'max': '768px'},
       'sm': {'max': '480px'},
     },
     extend: {
