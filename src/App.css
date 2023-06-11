@@ -38,3 +38,11 @@
   fill: #BD1212;
 }
 
+/* .card_icon > * {
+  fill: #EF4444;
+} */
+
+.card_icon > *:hover {
+  fill: #BD1212;
+}
+

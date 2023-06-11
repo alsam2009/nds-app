@@ -1,16 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import tagIcon from '../../images/tag-icon.svg';
-import { FaRegHeart } from "react-icons/fa";
 import { formatDate, getColorTag, truncateSentence } from '../tools/tools';
+import { Favourites } from '../components';
 
 const Card = ({ data }) => {
   const { id, title, publication_date, tag_article, image_url } = data;
   const { baseClass, otherClass } = getColorTag(tag_article);
 
   return (
-    <Link to={`/card/${id}`} target="_blank" rel="noopener noreferrer">
-      <div className='flex h-[416px]  max-w-xs flex-col bg-base-100 px-0 shadow-md dark:bg-base-500 dark:shadow-2xl overflow-hidden'>
+
+    <div className='flex h-[416px]  max-w-xs flex-col bg-base-100 px-0 shadow-md dark:bg-base-500 dark:shadow-2xl overflow-hidden'>
+      <Link to={`/card/${id}`} target="_blank" rel="noopener noreferrer">
         <div className='relative'>
           <div
             className={
@@ -31,20 +32,21 @@ const Card = ({ data }) => {
           />
         </div>
         <div className='grow p-[20px]'>
-          <h2 className='text-lg xl:text-base lg:text-sm font-medium underline dark:text-base-300'>
+          <h2 className='text-base xl:text-base lg:text-sm font-medium underline dark:text-base-300'>
             {truncateSentence(title)}
           </h2>
         </div>
+        </Link>
         <div className='mt-auto p-3'>
           <div className='flex items-center justify-between'>
             <p className='text-xs lg:text-[10px] text-base-400 dark:text-base-300'>
               {formatDate(publication_date)}
             </p>
-            <FaRegHeart  className='text-base text-base-400 dark:text-base-300'/>
+          <Favourites data={data} />
           </div>
-        </div>
       </div>
-    </Link>
+      </div>
+
   );
 };
 

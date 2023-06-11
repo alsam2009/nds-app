@@ -13,6 +13,9 @@ import TopNews from "./topNews/topNews";
 import NonFoundPage from "./pages/404";
 import CardPage from "./pages/cardPage";
 import FilterPage from "./pages/filterPage";
+import FavouritesPage from "./pages/favouritesPage"
+import Favourites from "./favourites/Favourites";
+import FavoritesAddInfo from "./favourites/FavoritesAddInfo";
 
 export {
   CurrencyInfo,
@@ -29,5 +32,8 @@ export {
   TopNews,
   NonFoundPage,
   CardPage,
-  FilterPage
+  FilterPage,
+  FavouritesPage,
+  Favourites,
+  FavoritesAddInfo
 }
