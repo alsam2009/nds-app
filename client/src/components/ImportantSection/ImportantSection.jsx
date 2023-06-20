@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import '../../App.css';
+import SERVER_URI from '../../api/api';
 
 import {
   TopNews,
@@ -16,7 +17,7 @@ const ImportantSection = () => {
   useEffect(() => {
     const getData = async () => {
       axios
-        .get('http://localhost:3000/data?tag_article=Важное', {
+        .get(SERVER_URI + '?tag_article=Важное', {
           params: {
             _page: 1,
             _limit: 9,

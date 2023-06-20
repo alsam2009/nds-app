@@ -2,17 +2,16 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 import useSWR from 'swr';
 import { fetcher } from '../tools/fetcher';
-import {ReactComponent as Loader } from '../../images/loader2.svg'
+import { ReactComponent as Loader } from '../../images/loader2.svg'
+import SERVER_URI from '../../api/api';
 
 const CardPage = () => {
   const { id } = useParams();
 
   const { data, error, isLoading } = useSWR(
-    `http://localhost:3000/data/${id}`,
+    `${SERVER_URI}/${id}`,
     fetcher
   );
-
-  // console.log(data)
 
   if (error) return <div>Ошибка загрузки</div>;
   if (isLoading) return

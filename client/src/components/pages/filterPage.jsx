@@ -5,6 +5,7 @@ import useSWRInfinite from "swr/infinite";
 import {ReactComponent as Loader } from '../../images/loader2.svg'
 import { Card, Divider, ImportantSection } from "../components";
 import { fetcher } from "../tools/fetcher";
+import SERVER_URI from "../../api/api";
 
 const FilterPage = ({ name, color }) => {
   const { ref, inView } = useInView({
@@ -15,9 +16,9 @@ const FilterPage = ({ name, color }) => {
   const key = location.state === "tag" ? "tag_article" : "q";
   const filterQuery = searchParams.get("filter") || "";
 
-  const getKey = (pageIndex = 1, previousPageData) => {
+  const getKey = (pageIndex = 0, previousPageData) => {
     if (previousPageData && !previousPageData.length) return null; // достигнут конец
-    return `http://localhost:3000/data?${key}=${encodeURIComponent(
+    return `${SERVER_URI}?${key}=${encodeURIComponent(
       filterQuery
     )}&_page=${pageIndex + 1}`;
   };
