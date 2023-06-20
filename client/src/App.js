@@ -7,7 +7,8 @@ import {
   FilterPage,
   AdditionalBar,
   Menu,
-  FavouritesPage
+  FavouritesPage,
+  SearchPage
 } from './components/components';
 import { navbar, colors } from './nds.config';
 
@@ -50,10 +51,16 @@ function App() {
         />
         <Route
           path='/search/'
-          element={<FilterPage name={navbar[2]} color={colors[5]} />}
+          element={<SearchPage name={navbar[2]} color={colors[5]} />}
         />
-        <Route path='/favourites/' element={<FavouritesPage name={navbar[3]} color={colors[1]} />} />
-        <Route path='*' element={<NonFoundPage />} />
+        <Route
+          path='/favourites/'
+          element={<FavouritesPage name={navbar[3]} color={colors[1]} />}
+        />
+        <Route
+          path='*'
+          element={<NonFoundPage />}
+        />
       </Routes>
     </div>
   );

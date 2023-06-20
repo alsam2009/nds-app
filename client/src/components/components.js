@@ -16,6 +16,7 @@ import FilterPage from "./pages/filterPage";
 import FavouritesPage from "./pages/favouritesPage"
 import Favourites from "./favourites/Favourites";
 import FavoritesAddInfo from "./favourites/FavoritesAddInfo";
+import SearchPage from "./pages/searchPage";
 
 export {
   CurrencyInfo,
@@ -35,5 +36,6 @@ export {
   FilterPage,
   FavouritesPage,
   Favourites,
-  FavoritesAddInfo
+  FavoritesAddInfo,
+  SearchPage
 }

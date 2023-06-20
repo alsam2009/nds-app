@@ -13,24 +13,23 @@ const FilterPage = ({ name, color }) => {
   });
   const location = useLocation();
   const [searchParams] = useSearchParams();
-  const key = location.state === "tag" ? "tag_article" : "q";
+  const key = location.state === "tag" ? "tag_article" : "";
   const filterQuery = searchParams.get("filter") || "";
 
-  const getKey = (pageIndex = 0, previousPageData) => {
+  const getKey = (pageIndex, previousPageData) => {
     if (previousPageData && !previousPageData.length) return null; // достигнут конец
     return `${SERVER_URI}?${key}=${encodeURIComponent(
       filterQuery
-    )}&_page=${pageIndex + 1}`;
+    )}&_page=${pageIndex}`;
   };
 
   const { data, error, size, setSize } = useSWRInfinite(getKey, fetcher);
-
   const isLoadingInitialData = !data && !error;
   const isLoadingMore =
     isLoadingInitialData ||
     (size > 0 && data && typeof data[size - 1] === "undefined");
 
-    useEffect(() => {
+  useEffect(() => {
       window.scrollTo(0, 0);
     }, [location.pathname]);
 
@@ -49,21 +48,15 @@ const FilterPage = ({ name, color }) => {
     );
   return (
     <div className="dark:bg-base-500">
-      {typeof name !== "string" && (
+      {typeof name !== "string" &&
         <>
           <Divider name={name[0]} color={color[0]} />
           <ImportantSection />
         </>
-      )}
-      {typeof name === "string" ? (
-        <Divider name={name} color={color} />
-      ) : (
-        <Divider name={name[1]} color={color[1]} />
-      )}
-      {location.pathname === '/search' && data[0].length <= 0 &&
-      <div className="px-8 dark:text-base-300 dark:h-screen dark:bg-base-500">
-          <p >По вашему запросу ничего не найдено 🤷‍♀️</p>
-      </div>
+      }
+      {typeof name === "string"
+      ? <Divider name={name} color={color} />
+      : <Divider name={name[1]} color={color[1]} />
       }
       <ul className="container px-8 md:px-4 grid grid-cols-5 lg:grid-cols-4 sm:grid-cols-2 gap-4 dark:bg-base-500">
         {data.map((pageData) =>

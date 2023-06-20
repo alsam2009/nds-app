@@ -31,7 +31,8 @@ export const getNews = async (req, res) => {
           { title: { $regex: re } },
           { article_preview: { $regex: re } }
         ])
-        // Альтернативный вариант поиска: .find({$text: { $search: query, $language: 'ru'}}), но ищет только по полям из индекса и точное совпадение слова
+        // Альтернативный вариант поиска: 
+		// .find({$text: { $search: query, $language: 'ru'}}), но ищет только по полям из индекса и точное совпадение слова
         return res.json(data)
     }
     // Все новости
