@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import '../../App.css';
 import SERVER_URI from '../../api/api';
+import { navbar } from '../../nds.config';
 
 import {
   TopNews,
@@ -17,15 +18,15 @@ const ImportantSection = () => {
   useEffect(() => {
     const getData = async () => {
       axios
-        .get(SERVER_URI + '?tag_article=Важное', {
+        .get(SERVER_URI + `?tag_article=${navbar[4]}`, {
           params: {
             _page: 1,
             _limit: 9,
           },
         })
         .then((res) => {
-          setImportantNewsSliderArray(res.data.splice(0, 5));
-          setimportantNewsSmallArray(res.data);
+          setImportantNewsSliderArray(res.data.toSpliced(5, 4));
+          setimportantNewsSmallArray(res.data.toSpliced(0, 5));
         });
     };
     getData();
