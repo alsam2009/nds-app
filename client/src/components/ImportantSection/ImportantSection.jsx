@@ -24,8 +24,8 @@ const ImportantSection = () => {
           },
         })
         .then((res) => {
-          setImportantNewsSliderArray(res.data.splice(0, 5));
-          setimportantNewsSmallArray(res.data);
+          setImportantNewsSliderArray(res.data.toSpliced(5, 4));
+          setimportantNewsSmallArray(res.data.toSpliced(0, 5));
         });
     };
     getData();

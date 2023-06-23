@@ -44,20 +44,21 @@ const ImportantNewsSlider = ({ data }) => {
           rel='noopener noreferrer'
           className='cursor-pointer'
         >
-          <div className='mb-5 sm:mb-4 w-full h-full xl:max-h-[420px] lg:max-h-[280px] md:max-h-[248px] sm:max-h-[190px] max-h-[465px] overflow-hidden flex'>
+          <div className='relative mb-5 sm:mb-4 w-full h-full xl:max-h-[420px] lg:max-h-[280px] md:max-h-[248px] sm:max-h-[190px] max-h-[465px] overflow-hidden flex'>
             <img
               src={data[currentSlide].image_url}
               className='w-full h-auto animate-fadeIn object-cover z-0'
               alt='slide'
             />
-          </div>
-          <div
-            className='absolute h-[100vh] 2xl:h-[77vh] xl:h-[69vh] lg:h-[46vh] md:h-[56vh] sm:h-[42vh] top-0 left-0 z-10 w-full'
+             <div
+            className='absolute h-[100%] top-0 left-0 z-10 w-full'
             style={{
               background:
                 'linear-gradient(180deg, rgba(73, 73, 73, 0) 34.38%, #050505)',
             }}
           ></div>
+          </div>
+
         </Link>
         <button className={'absolute top-[35%] right-[2%] z-40 block cursor-pointer rounded-full bg-black/20 p-2 sm:p-1 text-2xl lg:text-base sm:text-sm text-white duration-500'}>
           <HiChevronRight onClick={goToNextSlide} />
