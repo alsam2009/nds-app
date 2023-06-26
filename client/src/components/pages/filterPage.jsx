@@ -20,10 +20,12 @@ const FilterPage = ({ name, color }) => {
     if (previousPageData && !previousPageData.length) return null; // достигнут конец
     return `${SERVER_URI}?${key}=${encodeURIComponent(
       filterQuery
-    )}&_page=${pageIndex}`;
+    )}&_page=${pageIndex+1}`;
   };
 
-  const { data, error, size, setSize } = useSWRInfinite(getKey, fetcher);
+  const { data, error, size, setSize } = useSWRInfinite(getKey, fetcher, {
+    revalidateFirstPage: false
+  });
   const isLoadingInitialData = !data && !error;
   const isLoadingMore =
     isLoadingInitialData ||

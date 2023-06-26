@@ -43,7 +43,7 @@ const ImportantNewsSlider = ({ data }) => {
           rel='noopener noreferrer'
           className='cursor-pointer'
         >
-          <div className='relative mb-5 sm:mb-4 w-full h-full xl:max-h-[340px] lg:max-h-[316px] md:max-h-[238px] sm:max-h-[190px] max-h-[465px] overflow-hidden flex'>
+          <div className='relative mb-5 sm:mb-4 w-full h-full xl:max-h-[340px] lg:max-h-[316px] md:max-h-[238px] sm:max-h-[190px] max-h-[465px] overflow-hidden flex pb-[56%]'>
           {data.map((slide, index) => (
             <div
               key={slide.id}
