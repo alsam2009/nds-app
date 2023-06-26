@@ -31,10 +31,10 @@ const ImportantSection = () => {
     getData();
 
   }, []);
-  return (
+  return ( 
     <section className='main_block flex sm:block px-8 md:px-4 sm:mb-2'>
       <div className='important_news flex w-8/12 sm:w-full sm:pr-0 flex-col pr-10 lg:pr-5 dark:text-base-300'>
-        {importantNewsSliderArray.length > 0 ? <ImportantNewsSlider data={importantNewsSliderArray} /> : null}
+        <ImportantNewsSlider data={importantNewsSliderArray} />
         <ImportantNewsSmall data={importantNewsSmallArray} />
       </div>
       <div className='popular_news flex w-4/12 sm:w-full flex-col'>
