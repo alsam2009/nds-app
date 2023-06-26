@@ -25,7 +25,7 @@ const Card = ({ data }) => {
             }
           >
             <div className={otherClass + ' p-1.5 md:hidden'}>
-              <img src={tagIcon} alt='tag-icon' />
+              <img src={tagIcon} alt='tag-icon' loading="lazy" />
             </div>
             <div className='p-1.5 text-xs md:text-[10px] leading-none text-white'>
               {tag_article.toUpperCase()}
