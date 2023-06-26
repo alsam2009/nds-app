@@ -1,23 +1,16 @@
-import React, {useContext} from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import tagIcon from '../../images/tag-icon.svg';
 import { formatDate, getColorTag, truncateSentence } from '../tools/tools';
 import { Favourites } from '../components';
-import { CardContext } from '../../context/cardContext';
 
 const Card = ({ data }) => {
-  const {setCardData} = useContext(CardContext)
   const { id, title, publication_date, tag_article, image_url } = data;
   const { baseClass, otherClass } = getColorTag(tag_article);
 
-  const hanleClick = data => {
-    setCardData(data)
-  }
-
   return (
-
     <div className='flex h-[416px]  max-w-xs flex-col bg-base-100 px-0 shadow-md dark:bg-base-500 dark:shadow-2xl overflow-hidden'>
-      <Link to={`/card/${id}`} onClick={() => hanleClick(data)} rel="noopener noreferrer">
+      <Link to={`/card/${id}`} rel="noopener noreferrer">
         <div className='relative'>
           <div
             className={

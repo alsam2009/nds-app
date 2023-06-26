@@ -23,7 +23,7 @@ const ImportantNewsSlider = ({ data }) => {
     setCurrentSlide(nextSlide);
   };
 
-  // if (!data) return null;
+  if (!data) return null;
 
   return (
     data.length > 0 && (

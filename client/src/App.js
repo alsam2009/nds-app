@@ -1,7 +1,6 @@
-import React, {useState} from 'react';
+import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
-import { CardContext } from './context/cardContext';
 import {
   NonFoundPage,
   CardPage,
@@ -14,11 +13,8 @@ import {
 import { navbar, colors } from './nds.config';
 
 function App() {
-  const [cardData, setCardData] = useState()
-
   return (
     <div className='mx-auto dark:bg-base-500 2xl:w-[1349px]'>
-      <CardContext.Provider value={{cardData, setCardData}}>
         <AdditionalBar />
         <Menu />
         <Routes>
@@ -63,7 +59,6 @@ function App() {
             element={<NonFoundPage />}
           />
         </Routes>
-      </CardContext.Provider>
     </div>
   );
 }
