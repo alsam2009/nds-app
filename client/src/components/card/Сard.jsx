@@ -10,7 +10,7 @@ const Card = ({ data }) => {
 
   return (
     <div className='flex h-[416px]  max-w-xs flex-col bg-base-100 px-0 shadow-md dark:bg-base-500 dark:shadow-2xl overflow-hidden'>
-      <Link to={`/card/${id}`} rel="noopener noreferrer">
+      <Link to={`/card/${id}`} target="_blank" rel="noopener noreferrer">
         <div className='relative'>
           <div
             className={
@@ -28,6 +28,7 @@ const Card = ({ data }) => {
             className='h-[220px] w-[100%] object-cover'
             src={image_url}
             alt={title}
+            loading="lazy"
           />
         </div>
         <div className='grow p-[20px]'>
