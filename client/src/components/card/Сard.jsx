@@ -11,7 +11,6 @@ const Card = ({ data }) => {
   const { baseClass, otherClass } = getColorTag(tag_article);
 
   const hanleClick = data => {
-    console.log(data)
     setCardData(data)
   }
 
