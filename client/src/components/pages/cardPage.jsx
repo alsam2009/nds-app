@@ -4,6 +4,7 @@ import useSWR from 'swr';
 import { fetcher } from '../tools/fetcher';
 import { ReactComponent as Loader } from '../../images/loader2.svg'
 import SERVER_URI from '../../api/api';
+import NonFoundPage from './404';
 
 const CardPage = () => {
   const { id } = useParams();
@@ -13,7 +14,7 @@ const CardPage = () => {
     fetcher
   );
 
-  if (error) return <div>Ошибка загрузки</div>;
+  if (error) return <NonFoundPage/>;
   if (isLoading) return
   <div className="w-full  h-screen flex justify-center items-center dark:bg-base-500 dark:text-base-400">
     <Loader fill="rgb(167,165,165)" stroke="" width={70} />

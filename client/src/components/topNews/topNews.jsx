@@ -20,9 +20,9 @@ const TopNews = () => {
 
   return (
     <div className='flex h-[518px] w-full flex-col bg-base-200 shadow-md dark:bg-base-500 dark:shadow-2xl sm:h-auto'>
-      <div className='flex h-10 items-center justify-start border-b-2 border-base-400 bg-base-300 p-1.5 text-base-500 dark:border-none dark:bg-base-600/50 dark:text-base-300'>
+      <div className='flex h-10 items-center justify-start border-b-2 border-base-400 bg-base-300 p-1.5 text-base-500 dark:border-none dark:bg-base-600/50 dark:text-base-300 lg:text-sm md:text-xs'>
         <p>
-          <b>РЕКОМЕНДАЦИИ РЕДАКЦИИ</b>
+          <b>РЕКОМЕНДАЦИИ</b>
         </p>
       </div>
       {randomData &&
