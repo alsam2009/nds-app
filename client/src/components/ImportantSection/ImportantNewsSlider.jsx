@@ -52,7 +52,7 @@ const ImportantNewsSlider = ({ data }) => {
               <img
                 src={slide.image_url}
                 className='w-full h-auto animate-fadeIn object-cover -z-10'
-                alt='slide'
+                alt='TopNewsImage'
                 loading="lazy"
               />
             </div>
