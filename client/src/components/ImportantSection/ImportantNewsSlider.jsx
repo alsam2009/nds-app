@@ -43,7 +43,7 @@ const ImportantNewsSlider = ({ data }) => {
           rel='noopener noreferrer'
           className='cursor-pointer'
         >
-          <div className='relative mb-5 sm:mb-4 w-full h-full xl:max-h-[340px] lg:max-h-[316px] md:max-h-[238px] sm:max-h-[190px] max-h-[465px] overflow-hidden flex pb-[56%]'>
+          <div className='relative mb-5 sm:mb-4 w-full h-full xl:max-h-[340px] lg:max-h-[275px] md:max-h-[238px] sm:max-h-[190px] max-h-[465px] overflow-hidden flex pb-[56%]'>
           {data.map((slide, index) => (
             <div
               key={slide.id}
@@ -51,7 +51,7 @@ const ImportantNewsSlider = ({ data }) => {
             >
               <img
                 src={slide.image_url}
-                className='w-full h-auto animate-fadeIn object-cover z-0'
+                className='w-full h-auto animate-fadeIn object-cover -z-10'
                 alt='slide'
                 loading="lazy"
               />
