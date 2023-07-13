@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import CurrencyInfo from './СurrencyInfo';
 import Logo from '../../images/logo.png'
 import { FavoritesAddInfo } from '../components';
+import {Link} from 'react-router-dom'
 
 const AdditionalBar = () => {
   function useDarkMode() {
@@ -9,6 +10,7 @@ const AdditionalBar = () => {
       typeof window !== 'undefined' ? localStorage.theme : 'dark'
     );
     const colorTheme = theme === 'dark' ? 'light' : 'dark';
+
     useEffect(() => {
       const element = document.documentElement;
       element.classList.remove(colorTheme);
@@ -24,16 +26,20 @@ const AdditionalBar = () => {
 
   return (
     <div className='additional-info flex h-8 w-full items-center justify-between bg-base-500 pl-8 md:pl-4 sm:pl-1'>
-      <div className='flex items-center w-60 lg:w-36 md:hidden text-base-300 '>
-        <img src={Logo} className="w-6 h-6 mr-1" alt="logo" />
-        <p className='bg-gradient-to-r from-color-690 to-color-890 bg-clip-text text-lg font-bold text-transparent'>
-          NDS
-        </p>
-      </div>
+        <div className='flex items-center w-64 lg:w-36 md:hidden text-base-300 '>
+      <Link to={'/'} className='flex w-[50%]'>
+          <img src={Logo} className="w-6 h-6 mr-1" alt="logo" />
+          <p className='bg-gradient-to-r from-color-690 to-color-890 bg-clip-text text-lg font-bold text-transparent'>
+            NDS
+          </p>
+      </Link>
+        </div>
       <div className='w-full text-center text-white'>
-        <span className='cursor-pointer bg-gradient-to-r from-color-690 to-color-890 bg-clip-text text-xl lg:text-lg sm:text-xs font-extrabold tracking-widest text-transparent'>
-          ВСЕ ПРО ДРОНЫ
-        </span>
+        <Link to={'/'} className='w-full'>
+          <span className='cursor-pointer bg-gradient-to-r from-color-690 to-color-890 bg-clip-text text-xl lg:text-lg sm:text-xs font-extrabold tracking-widest text-transparent'>
+            ВСЕ ПРО ДРОНЫ
+          </span>
+        </Link>
       </div>
 
       <div className='flex w-80 sm:pr-2 items-center dark:bg-base-500'>

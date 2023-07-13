@@ -17,6 +17,7 @@ import FavouritesPage from "./pages/favouritesPage"
 import Favourites from "./favourites/Favourites";
 import FavoritesAddInfo from "./favourites/FavoritesAddInfo";
 import SearchPage from "./pages/searchPage";
+import TBot from "./TBot/TBot";
 
 export {
   CurrencyInfo,
@@ -37,5 +38,6 @@ export {
   FavouritesPage,
   Favourites,
   FavoritesAddInfo,
-  SearchPage
+  SearchPage,
+  TBot
 }

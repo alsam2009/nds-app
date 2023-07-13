@@ -46,3 +46,7 @@
   fill: #BD1212;
 }
 
+.icon_tg > *:hover {
+  fill: #1d64e7;
+}
+

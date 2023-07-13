@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import tagIcon from '../../images/tag-icon.svg';
 import { formatDate, getColorTag, truncateSentence } from '../tools/tools';
 import { Favourites } from '../components';
+import { TBot } from '../components';
+
 
 const Card = ({ data }) => {
   const { id, title, publication_date, tag_article, image_url } = data;
@@ -37,12 +39,15 @@ const Card = ({ data }) => {
           </h2>
         </div>
         </Link>
-        <div className='mt-auto p-3'>
+        <div className='mt-auto relative p-3'>
           <div className='flex items-center justify-between'>
             <p className='text-xs lg:text-[10px] text-base-400 dark:text-base-300'>
               {formatDate(publication_date)}
             </p>
-          <Favourites data={data} />
+            <div className='flex gap-2 text-base-400 dark:text-base-300'>
+              <TBot data={data}/>
+              <Favourites data={data} />
+            </div>
           </div>
       </div>
       </div>
