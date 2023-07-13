@@ -16,7 +16,7 @@ const TBot = ({ data }) => {
   };
 
   const handleSendClick = () => {
-    fetch('https://nds-server.vercel.app/send-news', {
+    fetch('https://nds-alsam2009.vercel.app/send-news', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
