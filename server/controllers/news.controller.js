@@ -45,8 +45,7 @@ export const getNews = async (req, res) => {
     .find({ })
     .sort({ publication_date: -1 })
     .skip((page-1) * limit)
-    .limit(limit);
-  return res.status(200).json(data);
+  return res.status(200).json(data.slice(0, limit));
   } catch (e) {
     res.status(500).json({
       message: "На сервере произошла ошибка. Попробуйте позже.",
